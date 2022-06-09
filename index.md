@@ -29,7 +29,7 @@ AVR 마이크로프로세스를 이용하여 주변의 회로를 제어합니다
 2. 출력실습
 3. [디스플레이](./display)
     - 세븐 세그먼트
-    - LCD
+    - [LCD](./display/lcd)
     - [Dot Metrix LED](./display/metrix)
 4. 입력실습
 5. 모터실습
