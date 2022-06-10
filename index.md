@@ -23,7 +23,9 @@ AVR 마이크로프로세스를 이용하여 주변의 회로를 제어합니다
 
 
 ## 강의 내용 살펴보기
-이제 `아두이노`에 대해서 차근차근 알아보도록 합시다.
+이제 `아두이노`에 대해서 차근차근 알아보도록 합시다. [ppt](https://drive.google.com/drive/folders/1PD4h8bJ93fvDd_NIMG403xOHJgN40ao-?usp=sharing)
+
+
 
 1. 기본실습
 2. 출력실습
