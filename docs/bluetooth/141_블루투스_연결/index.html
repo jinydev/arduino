@@ -720,13 +720,108 @@
 
 <p><img src="./img/슬라이드7.PNG" alt="슬라이드6" /></p>
 
+<h2 id="소프트웨어-시리얼">소프트웨어 시리얼</h2>
+
+<p>아두이노의 HW 시리얼과 충돌을 방지하고, 외부의 블루투스 연결하기 위하여 가상의 시리얼 통신 규약을 처리할 수 있는 소프트웨어 시리얼을 사용합니다.</p>
+
 <p><img src="./img/슬라이드8.PNG" alt="슬라이드6" /></p>
+
+<p><strong>Step1:</strong> 소프트웨어 시리얼을 사용하기 위해서는 외부 라이브러리를 사용해야 합니다. 소스코드에 해더파일을 삽입합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;SoftwareSerial.h&gt;
+</code></pre></div></div>
+
+<p><strong>Step2:</strong>  블루투스 연결하는 핀을 정의 합니다. 본 예제에서는 <code class="language-plaintext highlighter-rouge">8번핀</code>과 <code class="language-plaintext highlighter-rouge">7번핀</code>을 사용합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> #define BT_RXD 8
+ #define BT_TXD 7
+</code></pre></div></div>
+
+<p><strong>Step3:</strong> 소프트웨어 시리얼을 통하여 블루투스를 초기화 합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SoftwareSerial bluetooth(BT_RXD, BT_TXD);
+</code></pre></div></div>
+
+<p><strong>Step4:</strong> 초기화, setup에서 블루투스와 시리얼모니터 데이터 속도를 초기화 합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void setup() {
+  Serial.begin(115200); // 시리얼 모니터
+  bluetooth.begin(9600); // 블루투스 모듈
+}
+</code></pre></div></div>
+
+<blockquote>
+  <p>블루투스 모듈의 초기 기본값은 <code class="language-plaintext highlighter-rouge">9600</code> 입니다.</p>
+</blockquote>
+
+<p><strong>Step5:</strong> 동작구현부, loop 동작에서 시리얼 모니터와 블루투스 기기간의 echo 통신을 합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void loop() {
+	// 블루투스에서 데이터를 값이 있는지 확인 합니다.
+	if(bluetooth.available()){
+		// 블루투스에서 읽은 값을, 시리얼 모니터에 출력합니다.
+    	Serial.write(bluetooth.read());
+    }
+  
+  	// 시리얼 모니터에서 값을 확인합니다.
+  	if(Serial.available()){
+  		// 시리얼 모니터의 값을, 블루투스로 전송합니다. 
+    	bluetooth.write(Serial.read());
+  	}
+  	
+  	// 다시 처음 loop로 돌아가면서, 이 동작을 반복합니다.
+}
+</code></pre></div></div>
+
+<p>전체코드는 다음과 같습니다.</p>
+
+<p><strong>전체 코드:</strong> bluetooth_01.ino</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;SoftwareSerial.h&gt;</span><span class="cp">
+#define BT_RXD 8
+#define BT_TXD 7
+</span>
+<span class="n">SoftwareSerial</span> <span class="nf">bluetooth</span><span class="p">(</span><span class="n">BT_RXD</span><span class="p">,</span> <span class="n">BT_TXD</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+  <span class="n">bluetooth</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">bluetooth</span><span class="p">.</span><span class="n">available</span><span class="p">()){</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">bluetooth</span><span class="p">.</span><span class="n">read</span><span class="p">());</span>
+  <span class="p">}</span>
+  
+  <span class="k">if</span><span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">()){</span>
+    <span class="n">bluetooth</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">read</span><span class="p">());</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p><img src="./img/슬라이드9.PNG" alt="슬라이드6" /></p>
 
-<p><img src="./img/슬라이드10.PNG" alt="슬라이드6" /></p>
+<blockquote>
+  <p>시리얼 모니터가 출력되기 위해서는, 아두이노가 연결되어야 합니다.</p>
+</blockquote>
 
-<p><img src="./img/슬라이드11.PNG" alt="슬라이드6" /></p>
+<p><img src="./img/슬라이드10.PNG" alt="슬라이드6" />
+아두이노 통합 IDE <code class="language-plaintext highlighter-rouge">시리얼 모니터</code>창에서 <code class="language-plaintext highlighter-rouge">AT</code>명령을 입력해 봅니다. 시리얼창 화면에 <code class="language-plaintext highlighter-rouge">OK</code>가 출력되면 정상입니다.</p>
+
+<blockquote>
+  <p>AT명령을 입력할때에는, 블루투스 모듈의 LED가 깜빡거리는 상태이어야 합니다.</p>
+</blockquote>
+
+<p><strong>동작설명1:</strong></p>
+
+<p>앞에서 작성한 bluetooth_01 코드에서 보면 <code class="language-plaintext highlighter-rouge">A</code> 를 아두이노에게 보내고, 이를 다시 블루투스로 <code class="language-plaintext highlighter-rouge">A</code>문자를 전송합니다. 그리고 2번째 <code class="language-plaintext highlighter-rouge">B</code>문자가 시리얼로 입력되면, 다시 블루투스로 <code class="language-plaintext highlighter-rouge">B</code>문자가 전송됩니다.</p>
+
+<p><strong>동작설명2:</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">AT</code>명령을 입력받은 블루투스는 <code class="language-plaintext highlighter-rouge">OK</code>문자열을 반환하게 됩니다. 아두이노 프로그램은 블루투스로 전송받은 <code class="language-plaintext highlighter-rouge">O</code>와 <code class="language-plaintext highlighter-rouge">K</code>를 다시 시리얼 모니터로 반환하여 출력하게 됩니다.</p>
+
+<p><img src="./img/슬라이드11.PNG" alt="슬라이드6" />
+시리얼 모니터화면에 <code class="language-plaintext highlighter-rouge">OK</code>가 출력되지 않으면, 블루투스 모듈의 버젼을 확인합니다. 버젼에 3,0인 경우에는 시리얼 모니터의 설정을 <code class="language-plaintext highlighter-rouge">Both NL &amp; CR</code>로 변경해 주셔야 합니다.</p>
 
 <p><img src="./img/슬라이드12.PNG" alt="슬라이드6" /></p>
 
