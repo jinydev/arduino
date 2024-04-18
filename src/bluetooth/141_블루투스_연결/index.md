@@ -60,7 +60,7 @@ SoftwareSerial bluetooth(BT_RXD, BT_TXD);
 
 ```
 void setup() {
-  Serial.begin(115200); // 시리얼 모니터
+  Serial.begin(9600); // 시리얼 모니터
   bluetooth.begin(9600); // 블루투스 모듈
 }
 ```
