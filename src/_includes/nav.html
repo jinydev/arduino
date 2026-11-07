@@ -30,6 +30,7 @@
     <li class="bd-links-group py-2">
       {% assign url_parts = page.url | split: '/' %}
       {% assign top_dir = url_parts[1] %}
+      {% assign decoded_page_url = page.url | url_decode %}
 
       {% assign part_data = site.data.navigation.main %}
       {% assign part_title = "아두이노 마스터 클래스 목차" %}
@@ -114,7 +115,8 @@
               <ul class="list-unstyled fw-normal pb-2 small ps-1">
                 {% for child in section.children %}
                   {% assign is_current = false %}
-                  {% if page.url == child.url %}
+                  {% assign child_url_clean = child.url | strip %}
+                  {% if decoded_page_url == child_url_clean or page.url == child_url_clean %}
                     {% assign is_current = true %}
                   {% endif %}
                   <li class="py-1">
