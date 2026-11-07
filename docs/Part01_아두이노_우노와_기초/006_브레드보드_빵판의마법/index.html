@@ -25,7 +25,7 @@
 
 
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="/assets/css/docs.css?v=1794032635" rel="stylesheet" />
+  <link href="/assets/css/docs.css?v=1794033896" rel="stylesheet" />
   <link href="/assets/css/highlight.css" rel="stylesheet" />
 
   <style>
@@ -454,6 +454,22 @@
   border-radius: 0 !important;
   padding-left: calc(0.75rem - 3px);
 }
+.bd-sidebar-subtitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #475569;
+  padding: 0.85rem 0.75rem 0.35rem 0.75rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 0.3rem;
+}
+.sidebar-section-group:first-child .bd-sidebar-subtitle {
+  margin-top: 0;
+  padding-top: 0.15rem;
+}
 </style>
 
 <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
@@ -482,13 +498,18 @@
         <!-- Section Items List for Parts -->
         
           
-            <div class="mb-3">
-              <ul class="list-unstyled fw-normal pb-2 small ps-1">
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>전기·전자 회로 기초</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
                 
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/000_강의소개_아두이노모험의시작/"
                        class="bd-sidebar-link "
                        >
@@ -499,7 +520,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/001_에너지란_세상을움직이는힘/"
                        class="bd-sidebar-link "
                        >
@@ -510,7 +531,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/002_전기란_찌릿찌릿전자세상/"
                        class="bd-sidebar-link "
                        >
@@ -521,7 +542,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/003_디지털회로와_2진신호/"
                        class="bd-sidebar-link "
                        >
@@ -532,7 +553,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/004_디지털멀티미터_전압전류저항_도통테스트/"
                        class="bd-sidebar-link "
                        >
@@ -543,7 +564,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/005_전자회로의_핵심부품친구들/"
                        class="bd-sidebar-link "
                        >
@@ -554,7 +575,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/006_브레드보드_빵판의마법/"
                        class="bd-sidebar-link is-active"
                        aria-current="page">
@@ -562,10 +583,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>컴퓨터와 아두이노 보드</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/007_컴퓨터란_무엇일까/"
                        class="bd-sidebar-link "
                        >
@@ -576,7 +610,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/008_마이크로컨트롤러_MCU란/"
                        class="bd-sidebar-link "
                        >
@@ -587,7 +621,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/009_아두이노우노_보드탐구/"
                        class="bd-sidebar-link "
                        >
@@ -598,7 +632,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/010_라즈베리파이와_비교하기/"
                        class="bd-sidebar-link "
                        >
@@ -609,7 +643,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/011_틴커캐드_가상시뮬레이터/"
                        class="bd-sidebar-link "
                        >
@@ -617,10 +651,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>소프트웨어 개발 환경</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/012_아두이노IDE_설치하기/"
                        class="bd-sidebar-link "
                        >
@@ -631,7 +678,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/013_개발환경과_마법스케치/"
                        class="bd-sidebar-link "
                        >
@@ -642,7 +689,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/014_아두이노IDE_첫실행하기/"
                        class="bd-sidebar-link "
                        >
@@ -653,7 +700,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/015_블록코딩_mBlock맛보기/"
                        class="bd-sidebar-link "
                        >
@@ -661,10 +708,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>컴퓨팅 사고와 C언어 기초</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/016_디지털세상과_2진법/"
                        class="bd-sidebar-link "
                        >
@@ -675,7 +735,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/017_컴퓨팅사고력의_힘/"
                        class="bd-sidebar-link "
                        >
@@ -686,7 +746,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/018_코딩과_알고리즘이란/"
                        class="bd-sidebar-link "
                        >
@@ -697,7 +757,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/019_코드동작원리_컴파일과업로드/"
                        class="bd-sidebar-link "
                        >
@@ -708,7 +768,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/020_C언어기초1_마법상자함수/"
                        class="bd-sidebar-link "
                        >
@@ -719,7 +779,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/021_컴퓨터의기억소_메모리/"
                        class="bd-sidebar-link "
                        >
@@ -730,7 +790,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/022_C언어기초2_이름표상자변수/"
                        class="bd-sidebar-link "
                        >
@@ -738,10 +798,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>시리얼 통신과 액추에이터</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/023_시리얼모니터_PC대화하기/"
                        class="bd-sidebar-link "
                        >
@@ -752,7 +825,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/024_시리얼Read_키보드명령전송/"
                        class="bd-sidebar-link "
                        >
@@ -763,7 +836,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/025_세상과연결되는문_아두이노포트/"
                        class="bd-sidebar-link "
                        >
@@ -774,7 +847,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/026_움직임과빛을만드는_액추에이터/"
                        class="bd-sidebar-link "
                        >
@@ -782,10 +855,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>디지털 I/O와 LED 제어문</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/027_반짝반짝빛의요정_LED란/"
                        class="bd-sidebar-link "
                        >
@@ -796,7 +882,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/028_디지털LED_점등실습Blink/"
                        class="bd-sidebar-link "
                        >
@@ -807,7 +893,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/029_알록달록불빛오케스트라_다중LED/"
                        class="bd-sidebar-link "
                        >
@@ -818,7 +904,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/030_C언어제어문_생각의갈림길/"
                        class="bd-sidebar-link "
                        >
@@ -829,7 +915,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part01_아두이노_우노와_기초/031_C언어반복문_지치지않는회전목마/"
                        class="bd-sidebar-link "
                        >

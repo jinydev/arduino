@@ -1,7 +1,7 @@
 title: "Part 07. 부록 아두이노 심화 실습"
 url: "/Part07_부록_아두이노_추가실습/153_외부ADC컨버터_초정밀계측/"
 main:
-  - title: "Part 07. 부록 아두이노 심화 실습"
+  - title: "정밀 계측과 보안/무선 제어"
     children:
       - title: "153. 외부 ADC 정밀 계측"
         url: "/Part07_부록_아두이노_추가실습/153_외부ADC컨버터_초정밀계측/"
@@ -11,6 +11,8 @@ main:
         url: "/Part07_부록_아두이노_추가실습/155_적외선IR_무선리모컨제어/"
       - title: "156. DS1302 RTC 실시간 시계"
         url: "/Part07_부록_아두이노_추가실습/156_RTC_DS1302_실시간시계/"
+  - title: "미디어 로깅과 종합 실습"
+    children:
       - title: "157. MicroSD 센서 데이터로거"
         url: "/Part07_부록_아두이노_추가실습/157_MicroSD_센서데이터로거/"
       - title: "158. DFPlayer MP3 음원 재생"

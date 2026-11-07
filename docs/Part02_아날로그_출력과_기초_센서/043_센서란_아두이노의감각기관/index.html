@@ -25,7 +25,7 @@
 
 
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="/assets/css/docs.css?v=1794032635" rel="stylesheet" />
+  <link href="/assets/css/docs.css?v=1794033896" rel="stylesheet" />
   <link href="/assets/css/highlight.css" rel="stylesheet" />
 
   <style>
@@ -454,6 +454,22 @@
   border-radius: 0 !important;
   padding-left: calc(0.75rem - 3px);
 }
+.bd-sidebar-subtitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #475569;
+  padding: 0.85rem 0.75rem 0.35rem 0.75rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 0.3rem;
+}
+.sidebar-section-group:first-child .bd-sidebar-subtitle {
+  margin-top: 0;
+  padding-top: 0.15rem;
+}
 </style>
 
 <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
@@ -482,13 +498,18 @@
         <!-- Section Items List for Parts -->
         
           
-            <div class="mb-3">
-              <ul class="list-unstyled fw-normal pb-2 small ps-1">
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>PWM 출력과 신호 파형 계측</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
                 
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/032_PWM원리_눈속임깜빡임마법/"
                        class="bd-sidebar-link "
                        >
@@ -499,7 +520,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/033_오실로스코프_눈으로보는_신호파형과_PWM계측/"
                        class="bd-sidebar-link "
                        >
@@ -510,7 +531,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/034_아날로그LED_감성밝기조절/"
                        class="bd-sidebar-link "
                        >
@@ -521,7 +542,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/035_RGB_LED_무지개빛혼합/"
                        class="bd-sidebar-link "
                        >
@@ -529,10 +550,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>시리얼 통신과 문자 제어</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/036_시리얼통신이론_데이터전송/"
                        class="bd-sidebar-link "
                        >
@@ -543,7 +577,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/037_시리얼문자대화_송수신/"
                        class="bd-sidebar-link "
                        >
@@ -554,7 +588,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/038_시리얼LED제어_키보드원격명령/"
                        class="bd-sidebar-link "
                        >
@@ -565,7 +599,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/039_RGB시리얼_키보드컬러믹싱/"
                        class="bd-sidebar-link "
                        >
@@ -573,10 +607,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>소리 액추에이터와 멜로디</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/040_부저란_마법의소리떨림판/"
                        class="bd-sidebar-link "
                        >
@@ -587,7 +634,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/041_능동부저_경보음과비밀암호/"
                        class="bd-sidebar-link "
                        >
@@ -598,7 +645,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/042_수동부저_도레미멜로디연주/"
                        class="bd-sidebar-link "
                        >
@@ -606,10 +653,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>센서 기초와 디지털 입력(스위치)</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/043_센서란_아두이노의감각기관/"
                        class="bd-sidebar-link is-active"
                        aria-current="page">
@@ -620,7 +680,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/044_센서신호의종류와_ADC변환/"
                        class="bd-sidebar-link "
                        >
@@ -631,7 +691,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/045_입력이란_아두이노귀기울이기/"
                        class="bd-sidebar-link "
                        >
@@ -642,7 +702,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/046_딸깍스위치_택트버튼다루기/"
                        class="bd-sidebar-link "
                        >
@@ -653,7 +713,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/047_도깨비신호잡기_풀업저항/"
                        class="bd-sidebar-link "
                        >
@@ -664,7 +724,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/048_부저스위치_스마트초인종/"
                        class="bd-sidebar-link "
                        >
@@ -675,7 +735,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/049_부저피아노_아두이노미니건반/"
                        class="bd-sidebar-link "
                        >
@@ -686,7 +746,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/050_12개LED하트와_룰렛게임/"
                        class="bd-sidebar-link "
                        >
@@ -694,10 +754,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>아날로그 센서와 물리량 계측</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/051_가변저항_전압분배손잡이/"
                        class="bd-sidebar-link "
                        >
@@ -708,7 +781,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/052_2축조이스틱_게임기조종간/"
                        class="bd-sidebar-link "
                        >
@@ -719,7 +792,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/053_미세전압정밀측정_AREF핀/"
                        class="bd-sidebar-link "
                        >
@@ -730,7 +803,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/054_플렉스휨센서_구부림각도측정/"
                        class="bd-sidebar-link "
                        >
@@ -741,7 +814,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/055_압력센서FSR_누르는힘측정/"
                        class="bd-sidebar-link "
                        >
@@ -752,7 +825,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/056_조도CdS센서_스마트가로등/"
                        class="bd-sidebar-link "
                        >
@@ -763,7 +836,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part02_아날로그_출력과_기초_센서/057_아날로그온도센서_TMP36/"
                        class="bd-sidebar-link "
                        >

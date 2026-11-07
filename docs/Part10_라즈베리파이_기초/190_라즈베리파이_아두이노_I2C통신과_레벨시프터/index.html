@@ -25,7 +25,7 @@
 
 
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="/assets/css/docs.css?v=1794032635" rel="stylesheet" />
+  <link href="/assets/css/docs.css?v=1794033896" rel="stylesheet" />
   <link href="/assets/css/highlight.css" rel="stylesheet" />
 
   <style>
@@ -454,6 +454,22 @@
   border-radius: 0 !important;
   padding-left: calc(0.75rem - 3px);
 }
+.bd-sidebar-subtitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #475569;
+  padding: 0.85rem 0.75rem 0.35rem 0.75rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 0.3rem;
+}
+.sidebar-section-group:first-child .bd-sidebar-subtitle {
+  margin-top: 0;
+  padding-top: 0.15rem;
+}
 </style>
 
 <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
@@ -482,13 +498,18 @@
         <!-- Section Items List for Parts -->
         
           
-            <div class="mb-3">
-              <ul class="list-unstyled fw-normal pb-2 small ps-1">
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>라즈베리파이 기초와 하드웨어</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
                 
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part10_라즈베리파이_기초/185_라즈베리파이_소개와_SBC하드웨어스펙/"
                        class="bd-sidebar-link "
                        >
@@ -499,7 +520,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part10_라즈베리파이_기초/186_라즈베리파이_OS설치와_리눅스환경구축/"
                        class="bd-sidebar-link "
                        >
@@ -510,7 +531,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part10_라즈베리파이_기초/187_라즈베리파이_vs_아두이노메가_체급비교/"
                        class="bd-sidebar-link "
                        >
@@ -518,10 +539,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>라즈베리파이-아두이노 하이브리드 연동</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part10_라즈베리파이_기초/188_라즈베리파이_아두이노연동_전압주의와_레벨시프터/"
                        class="bd-sidebar-link "
                        >
@@ -532,7 +566,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part10_라즈베리파이_기초/189_라즈베리파이_아두이노_USB시리얼통신/"
                        class="bd-sidebar-link "
                        >
@@ -543,7 +577,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part10_라즈베리파이_기초/190_라즈베리파이_아두이노_I2C통신과_레벨시프터/"
                        class="bd-sidebar-link is-active"
                        aria-current="page">
@@ -554,7 +588,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part10_라즈베리파이_기초/191_라즈베리파이_기초/"
                        class="bd-sidebar-link "
                        >
@@ -565,7 +599,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part10_라즈베리파이_기초/192_두뇌와손발_협동프로젝트_스마트홈_AIoT허브/"
                        class="bd-sidebar-link "
                        >

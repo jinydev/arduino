@@ -25,7 +25,7 @@
 
 
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="/assets/css/docs.css?v=1794032635" rel="stylesheet" />
+  <link href="/assets/css/docs.css?v=1794033896" rel="stylesheet" />
   <link href="/assets/css/highlight.css" rel="stylesheet" />
 
   <style>
@@ -454,6 +454,22 @@
   border-radius: 0 !important;
   padding-left: calc(0.75rem - 3px);
 }
+.bd-sidebar-subtitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #475569;
+  padding: 0.85rem 0.75rem 0.35rem 0.75rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 0.3rem;
+}
+.sidebar-section-group:first-child .bd-sidebar-subtitle {
+  margin-top: 0;
+  padding-top: 0.15rem;
+}
 </style>
 
 <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
@@ -482,13 +498,18 @@
         <!-- Section Items List for Parts -->
         
           
-            <div class="mb-3">
-              <ul class="list-unstyled fw-normal pb-2 small ps-1">
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>그래픽 디스플레이 (매트릭스·네오픽셀·OLED)</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
                 
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/074_C언어배열_데이터줄줄이기차/"
                        class="bd-sidebar-link "
                        >
@@ -499,7 +520,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/075_8x8도트매트릭스_픽셀아트/"
                        class="bd-sidebar-link "
                        >
@@ -510,7 +531,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/076_MAX7219_매트릭스모듈구동/"
                        class="bd-sidebar-link "
                        >
@@ -521,7 +542,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/077_32x8와이드전광판_다중제어/"
                        class="bd-sidebar-link "
                        >
@@ -532,7 +553,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/078_WS2812B_네오픽셀_화려한RGB무지개와_스마트무드등/"
                        class="bd-sidebar-link "
                        >
@@ -543,7 +564,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/079_SSD1306_OLED디스플레이_128x64그래픽과_아이콘위젯/"
                        class="bd-sidebar-link "
                        >
@@ -551,10 +572,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>모터 기초와 전원 공급</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/080_직류전원공급기_파워서플라이와_외부전원/"
                        class="bd-sidebar-link "
                        >
@@ -565,7 +599,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/081_모터란_전기운동변환/"
                        class="bd-sidebar-link "
                        >
@@ -576,7 +610,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/082_모터의종류와_특징/"
                        class="bd-sidebar-link "
                        >
@@ -587,7 +621,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/083_하드웨어PWM_타이머/"
                        class="bd-sidebar-link "
                        >
@@ -598,7 +632,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/084_PWM펄스폭조절_원리/"
                        class="bd-sidebar-link "
                        >
@@ -606,10 +640,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>서보 모터와 스텝 모터 제어</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/085_서보모터_각도제어/"
                        class="bd-sidebar-link "
                        >
@@ -620,7 +667,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/086_SG90서보모터_로봇관절/"
                        class="bd-sidebar-link "
                        >
@@ -631,7 +678,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/087_스텝모터란_한걸음씩회전/"
                        class="bd-sidebar-link "
                        >
@@ -642,7 +689,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/088_28BYJ48_감속스텝모터/"
                        class="bd-sidebar-link "
                        >
@@ -653,7 +700,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/089_ULN2003_스텝드라이버/"
                        class="bd-sidebar-link "
                        >
@@ -664,7 +711,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/090_스텝모터_구동제어실습/"
                        class="bd-sidebar-link "
                        >
@@ -675,7 +722,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/091_스텝모터_정밀각도제어/"
                        class="bd-sidebar-link "
                        >
@@ -683,10 +730,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>DC 모터 구동과 드라이버 IC</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/092_릴레이_전자석스위치/"
                        class="bd-sidebar-link "
                        >
@@ -697,7 +757,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/093_DC모터_연속회전원리/"
                        class="bd-sidebar-link "
                        >
@@ -708,7 +768,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/094_트랜지스터_다이오드구동/"
                        class="bd-sidebar-link "
                        >
@@ -719,7 +779,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/095_릴레이_DC모터제어/"
                        class="bd-sidebar-link "
                        >
@@ -730,7 +790,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/096_DC모터전류제어_토크/"
                        class="bd-sidebar-link "
                        >
@@ -741,7 +801,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/097_인버터제어_H브리지원리/"
                        class="bd-sidebar-link "
                        >
@@ -752,7 +812,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/098_L298N_듀얼모터드라이버/"
                        class="bd-sidebar-link "
                        >
@@ -763,7 +823,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/099_DC모터_정역회전제어/"
                        class="bd-sidebar-link "
                        >
@@ -774,7 +834,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/100_DC모터_PWM속도제어/"
                        class="bd-sidebar-link "
                        >
@@ -782,10 +842,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>인터럽트와 엔코더 피드백 제어</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/101_인터럽트란_비상전화호출/"
                        class="bd-sidebar-link "
                        >
@@ -796,7 +869,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/102_외부인터럽트_실시간감지/"
                        class="bd-sidebar-link "
                        >
@@ -807,7 +880,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/103_핀변화인터럽트_PCINT/"
                        class="bd-sidebar-link "
                        >
@@ -818,7 +891,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/104_DC엔코더_회전측정/"
                        class="bd-sidebar-link "
                        >
@@ -829,7 +902,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/105_2상엔코더_방향감별/"
                        class="bd-sidebar-link "
                        >
@@ -840,7 +913,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/106_엔코더인터럽트_펄스카운트/"
                        class="bd-sidebar-link "
                        >
@@ -851,7 +924,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/107_PID제어_정밀위치속도보정/"
                        class="bd-sidebar-link is-active"
                        aria-current="page">
@@ -859,10 +932,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>호밍/리미트 및 BLDC 모터</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/108_모터_홈포지션_영점복귀와_호밍알고리즘/"
                        class="bd-sidebar-link "
                        >
@@ -873,7 +959,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/109_모터동작범위_소프트리미트와_하드엔드스탑/"
                        class="bd-sidebar-link "
                        >
@@ -884,7 +970,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/110_포토인터럽터_비접촉정밀원점과_슬릿원판_회전제어/"
                        class="bd-sidebar-link "
                        >
@@ -895,7 +981,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/111_BLDC모터_원리와_ESC전자변속기/"
                        class="bd-sidebar-link "
                        >
@@ -906,7 +992,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part04_그래픽_디스플레이와_모터_구동/112_BLDC모터_ESC캘리브레이션과_속도제어/"
                        class="bd-sidebar-link "
                        >

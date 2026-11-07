@@ -25,7 +25,7 @@
 
 
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="/assets/css/docs.css?v=1794032635" rel="stylesheet" />
+  <link href="/assets/css/docs.css?v=1794033896" rel="stylesheet" />
   <link href="/assets/css/highlight.css" rel="stylesheet" />
 
   <style>
@@ -454,6 +454,22 @@
   border-radius: 0 !important;
   padding-left: calc(0.75rem - 3px);
 }
+.bd-sidebar-subtitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #475569;
+  padding: 0.85rem 0.75rem 0.35rem 0.75rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 0.3rem;
+}
+.sidebar-section-group:first-child .bd-sidebar-subtitle {
+  margin-top: 0;
+  padding-top: 0.15rem;
+}
 </style>
 
 <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
@@ -482,13 +498,18 @@
         <!-- Section Items List for Parts -->
         
           
-            <div class="mb-3">
-              <ul class="list-unstyled fw-normal pb-2 small ps-1">
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>아두이노 메가 하드웨어 스펙</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
                 
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part09_아두이노_메가_대규모프로젝트/170_아두이노메가_소개와_핀부자MCU/"
                        class="bd-sidebar-link "
                        >
@@ -499,7 +520,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part09_아두이노_메가_대규모프로젝트/171_아두이노메가_압도적인스펙탐구/"
                        class="bd-sidebar-link "
                        >
@@ -510,7 +531,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part09_아두이노_메가_대규모프로젝트/172_아두이노메가_개발환경과_부트로더/"
                        class="bd-sidebar-link "
                        >
@@ -521,7 +542,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part09_아두이노_메가_대규모프로젝트/173_아두이노메가_포트구조와_레지스터제어/"
                        class="bd-sidebar-link "
                        >
@@ -532,7 +553,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part09_아두이노_메가_대규모프로젝트/174_아두이노메가_핀맵과_우노호환성주의점/"
                        class="bd-sidebar-link "
                        >
@@ -543,7 +564,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part09_아두이노_메가_대규모프로젝트/175_아두이노메가_IDE설정과_4개하드웨어시리얼/"
                        class="bd-sidebar-link is-active"
                        aria-current="page">
@@ -551,10 +572,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>FreeRTOS와 대규모 제어</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part09_아두이노_메가_대규모프로젝트/176_아두이노메가_운영체제_FreeRTOS기초/"
                        class="bd-sidebar-link "
                        >
@@ -565,7 +599,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part09_아두이노_메가_대규모프로젝트/177_아두이노메가_운영체제_동기화와큐/"
                        class="bd-sidebar-link "
                        >
@@ -576,7 +610,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part09_아두이노_메가_대규모프로젝트/178_아두이노메가_16채널아날로그_센서허브/"
                        class="bd-sidebar-link "
                        >
@@ -587,7 +621,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part09_아두이노_메가_대규모프로젝트/179_아두이노메가_다축서보_12관절동시제어/"
                        class="bd-sidebar-link "
                        >
@@ -598,7 +632,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part09_아두이노_메가_대규모프로젝트/180_아두이노메가_16비트병렬_TFT터치스크린/"
                        class="bd-sidebar-link "
                        >
@@ -609,7 +643,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part09_아두이노_메가_대규모프로젝트/181_아두이노메가_6개하드웨어인터럽트_다축엔코더/"
                        class="bd-sidebar-link "
                        >
@@ -620,7 +654,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part09_아두이노_메가_대규모프로젝트/182_아두이노메가_3D프린터와_대규모로봇제어/"
                        class="bd-sidebar-link "
                        >
@@ -628,10 +662,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>네트워크와 웹서버 제어</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part09_아두이노_메가_대규모프로젝트/183_아두이노메가_네트워크_이더넷기초/"
                        class="bd-sidebar-link "
                        >
@@ -642,7 +689,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part09_아두이노_메가_대규모프로젝트/184_아두이노메가_웹서버_웹브라우저제어/"
                        class="bd-sidebar-link "
                        >

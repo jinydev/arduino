@@ -23,6 +23,22 @@
   border-radius: 0 !important;
   padding-left: calc(0.75rem - 3px);
 }
+.bd-sidebar-subtitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #475569;
+  padding: 0.85rem 0.75rem 0.35rem 0.75rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 0.3rem;
+}
+.sidebar-section-group:first-child .bd-sidebar-subtitle {
+  margin-top: 0;
+  padding-top: 0.15rem;
+}
 </style>
 
 <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
@@ -111,15 +127,20 @@
         <!-- Section Items List for Parts -->
         {% for section in part_data %}
           {% if section.children %}
-            <div class="mb-3">
-              <ul class="list-unstyled fw-normal pb-2 small ps-1">
+            <div class="sidebar-section-group mb-2">
+              {% if section.title %}
+                <div class="bd-sidebar-subtitle">
+                  <span>{{ section.title }}</span>
+                </div>
+              {% endif %}
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
                 {% for child in section.children %}
                   {% assign is_current = false %}
                   {% assign child_url_clean = child.url | strip %}
                   {% if decoded_page_url == child_url_clean or page.url == child_url_clean %}
                     {% assign is_current = true %}
                   {% endif %}
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="{{ child.url }}"
                        class="bd-sidebar-link {% if is_current %}is-active{% endif %}"
                        {% if is_current %}aria-current="page"{% endif %}>

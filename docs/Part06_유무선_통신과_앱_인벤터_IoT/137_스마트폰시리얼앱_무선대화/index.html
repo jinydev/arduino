@@ -25,7 +25,7 @@
 
 
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="/assets/css/docs.css?v=1794032635" rel="stylesheet" />
+  <link href="/assets/css/docs.css?v=1794033896" rel="stylesheet" />
   <link href="/assets/css/highlight.css" rel="stylesheet" />
 
   <style>
@@ -454,6 +454,22 @@
   border-radius: 0 !important;
   padding-left: calc(0.75rem - 3px);
 }
+.bd-sidebar-subtitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #475569;
+  padding: 0.85rem 0.75rem 0.35rem 0.75rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 0.3rem;
+}
+.sidebar-section-group:first-child .bd-sidebar-subtitle {
+  margin-top: 0;
+  padding-top: 0.15rem;
+}
 </style>
 
 <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
@@ -482,13 +498,18 @@
         <!-- Section Items List for Parts -->
         
           
-            <div class="mb-3">
-              <ul class="list-unstyled fw-normal pb-2 small ps-1">
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>다중 아두이노 유선 통신망 (Serial/I2C/SPI)</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
                 
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/123_다중아두이노_네트워크개요/"
                        class="bd-sidebar-link "
                        >
@@ -499,7 +520,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/124_시리얼포트의_하드웨어비밀/"
                        class="bd-sidebar-link "
                        >
@@ -510,7 +531,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/125_두대의아두이노_시리얼연동/"
                        class="bd-sidebar-link "
                        >
@@ -521,7 +542,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/126_SoftwareSerial_가상통신핀/"
                        class="bd-sidebar-link "
                        >
@@ -532,7 +553,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/127_I2C통신_마스터슬레이브원리/"
                        class="bd-sidebar-link "
                        >
@@ -543,7 +564,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/128_I2C두대연동_데이터패킷/"
                        class="bd-sidebar-link "
                        >
@@ -554,7 +575,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/129_I2C세대연동_1대N네트워크/"
                        class="bd-sidebar-link "
                        >
@@ -565,7 +586,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/130_SPI통신원리_초고속전이중/"
                        class="bd-sidebar-link "
                        >
@@ -576,7 +597,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/131_SPI_싱글슬레이브연동/"
                        class="bd-sidebar-link "
                        >
@@ -587,7 +608,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/132_SPI_멀티슬레이브연동/"
                        class="bd-sidebar-link "
                        >
@@ -595,10 +616,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>블루투스 무선 통신</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/133_블루투스란_무선근거리통신/"
                        class="bd-sidebar-link "
                        >
@@ -609,7 +643,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/134_HC06_블루투스모듈연결/"
                        class="bd-sidebar-link "
                        >
@@ -620,7 +654,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/135_AT명령어_블루투스환경설정/"
                        class="bd-sidebar-link "
                        >
@@ -631,7 +665,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/136_블루투스페어링_무선짝꿍/"
                        class="bd-sidebar-link "
                        >
@@ -642,7 +676,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/137_스마트폰시리얼앱_무선대화/"
                        class="bd-sidebar-link is-active"
                        aria-current="page">
@@ -653,7 +687,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/138_블루투스스위치_스마트폰LED제어/"
                        class="bd-sidebar-link "
                        >
@@ -661,10 +695,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>MIT 앱 인벤터 모바일 앱 제작</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/139_스마트폰앱이란_소프트웨어생태계/"
                        class="bd-sidebar-link "
                        >
@@ -675,7 +722,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/140_앱인벤터_블록코딩마법소개/"
                        class="bd-sidebar-link "
                        >
@@ -686,7 +733,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/141_AI2컴패니언_실시간스마트폰연동/"
                        class="bd-sidebar-link "
                        >
@@ -697,7 +744,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/142_앱인벤터_디자이너인터페이스/"
                        class="bd-sidebar-link "
                        >
@@ -708,7 +755,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/143_실습UI_화면레이아웃설계/"
                        class="bd-sidebar-link "
                        >
@@ -719,7 +766,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/144_실습UI_버튼과블루투스컴포넌트/"
                        class="bd-sidebar-link "
                        >
@@ -730,7 +777,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/145_블록에디터_이벤트구동프로그래밍/"
                        class="bd-sidebar-link "
                        >
@@ -741,7 +788,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/146_블루투스연결_블록조립하기/"
                        class="bd-sidebar-link "
                        >
@@ -752,7 +799,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/147_LED제어_무선텍스트전송블록/"
                        class="bd-sidebar-link "
                        >
@@ -763,7 +810,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/148_스마트폰앱_APK빌드및실행/"
                        class="bd-sidebar-link "
                        >
@@ -771,10 +818,23 @@
                     </a>
                   </li>
                 
+              </ul>
+            </div>
+          
+        
+          
+            <div class="sidebar-section-group mb-2">
+              
+                <div class="bd-sidebar-subtitle">
+                  <span>글로벌 IoT와 클라우드 & 알림</span>
+                </div>
+              
+              <ul class="list-unstyled fw-normal pb-1 small ps-0 mb-0">
+                
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/149_ESP32_WiFi_웹서버와_원격스마트홈제어/"
                        class="bd-sidebar-link "
                        >
@@ -785,7 +845,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/150_MQTT_경량IoT메시징_발행구독과_초고속통신/"
                        class="bd-sidebar-link "
                        >
@@ -796,7 +856,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/151_IoT클라우드_ThingSpeak_실시간센서대시보드/"
                        class="bd-sidebar-link "
                        >
@@ -807,7 +867,7 @@
                   
                   
                   
-                  <li class="py-1">
+                  <li class="py-0.5">
                     <a href="/Part06_유무선_통신과_앱_인벤터_IoT/152_스마트폰_텔레그램봇_침입화재_실시간푸시알림/"
                        class="bd-sidebar-link "
                        >
