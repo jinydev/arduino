@@ -25,7 +25,7 @@
 
 
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="/assets/css/docs.css?v=1794033896" rel="stylesheet" />
+  <link href="/assets/css/docs.css?v=1794035105" rel="stylesheet" />
   <link href="/assets/css/highlight.css" rel="stylesheet" />
 
   <style>
@@ -473,7 +473,7 @@
 </style>
 
 <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
-  <ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2">
+  <ul class="bd-links-nav list-unstyled mb-0 pe-lg-2" style="padding-bottom: 12rem;">
     <li class="bd-links-group py-2">
       
       
@@ -705,6 +705,48 @@
     </li>
   </ul>
 </nav>
+
+<script>
+(function() {
+  function scrollSidebarToActive() {
+    var activeItem = document.querySelector('.bd-sidebar .is-active, .bd-links .is-active, .bd-sidebar-link.is-active');
+    if (!activeItem) return;
+
+    var sidebar = document.querySelector('.bd-sidebar');
+    var offcanvas = document.querySelector('.bd-sidebar .offcanvas-body');
+
+    var container = null;
+    if (sidebar && sidebar.scrollHeight > sidebar.clientHeight) {
+      container = sidebar;
+    } else if (offcanvas && offcanvas.scrollHeight > offcanvas.clientHeight) {
+      container = offcanvas;
+    } else if (sidebar) {
+      container = sidebar;
+    }
+
+    if (container) {
+      var containerRect = container.getBoundingClientRect();
+      var itemRect = activeItem.getBoundingClientRect();
+
+      // Position activeItem roughly 30% from the top of the sidebar viewport
+      var relativeTop = itemRect.top - containerRect.top;
+      var targetScroll = container.scrollTop + relativeTop - (containerRect.height * 0.3);
+
+      container.scrollTop = Math.max(0, targetScroll);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', scrollSidebarToActive);
+  } else {
+    scrollSidebarToActive();
+  }
+
+  window.addEventListener('load', function() {
+    setTimeout(scrollSidebarToActive, 50);
+  });
+})();
+</script>
 
             </div>
         </div>
