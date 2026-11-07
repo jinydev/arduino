@@ -1,0 +1,52 @@
+title: "지니와 도로시가 함께하는 아두이노와 전자 세상 탐험"
+description: "이호진 교수님과 함께하는 아두이노 193강 마스터 클래스 (우노, 나노, 메가 & 라즈베리파이)"
+author: "Hojin"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-gist
+
+# Navigation
+nav_sort: 'priorities'
+
+# Build Settings
+destination: docs
+source: src
+url: "https://arduino.jiny.dev"
+baseurl: ""
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "docs"
+
+# Sass 설정
+sass:
+  load_paths:
+    - _sass
+
+# GitHub Pages 호환성을 위한 설정
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .github/
+  - .git/
+  - README.md
+  - CURRICULUM_14WEEKS.md
+  - "*.pptx"
+  - "*.py"
+  - "__pycache__"
+  - "slides.md"
+  - "*/slides.md"
+

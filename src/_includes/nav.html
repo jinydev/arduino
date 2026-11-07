@@ -1,0 +1,135 @@
+<style>
+.bd-sidebar-link {
+  color: #64748b;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0 !important;
+  font-size: 0.92rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.15s ease-in-out;
+  line-height: 1.4;
+}
+.bd-sidebar-link:hover {
+  color: #0f172a;
+  background-color: #f1f5f9;
+  border-radius: 0 !important;
+}
+.bd-sidebar-link.is-active {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+  background-color: #f8fafc !important;
+  border-left: 3px solid #0f172a !important;
+  border-radius: 0 !important;
+  padding-left: calc(0.75rem - 3px);
+}
+</style>
+
+<nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
+  <ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2">
+    <li class="bd-links-group py-2">
+      {% assign url_parts = page.url | split: '/' %}
+      {% assign top_dir = url_parts[1] %}
+
+      {% assign part_data = site.data.navigation.main %}
+      {% assign part_title = "아두이노 마스터 클래스 목차" %}
+      {% assign part_url = "/" %}
+      {% assign is_intro = false %}
+
+      {% if page.url contains "character" or page.url contains "curriculum" or page.url contains "intro" or page.url contains "guides" %}
+        {% assign is_intro = true %}
+        {% assign part_title = "소개하기" %}
+        {% assign part_url = "/character/" %}
+      {% elsif top_dir contains "Part01" or top_dir contains "part01" or top_dir contains "part1" or page.url contains "Part01" %}
+        {% assign part_data = site.data.part01.main %}
+        {% assign part_title = site.data.part01.title | default: "Part 01. 아두이노 우노와 전자회로 기초" %}
+        {% assign part_url = site.data.part01.url %}
+      {% elsif top_dir contains "Part02" or top_dir contains "part02" or top_dir contains "part2" or page.url contains "Part02" %}
+        {% assign part_data = site.data.part02.main %}
+        {% assign part_title = site.data.part02.title | default: "Part 02. 아날로그 출력(PWM)과 기초 센서" %}
+        {% assign part_url = site.data.part02.url %}
+      {% elsif top_dir contains "Part03" or top_dir contains "part03" or top_dir contains "part3" or page.url contains "Part03" %}
+        {% assign part_data = site.data.part03.main %}
+        {% assign part_title = site.data.part03.title | default: "Part 03. 생활 환경 센서와 캐릭터 LCD" %}
+        {% assign part_url = site.data.part03.url %}
+      {% elsif top_dir contains "Part04" or top_dir contains "part04" or top_dir contains "part4" or page.url contains "Part04" %}
+        {% assign part_data = site.data.part04.main %}
+        {% assign part_title = site.data.part04.title | default: "Part 04. 그래픽 디스플레이와 모터 구동" %}
+        {% assign part_url = site.data.part04.url %}
+      {% elsif top_dir contains "Part05" or top_dir contains "part05" or top_dir contains "part5" or page.url contains "Part05" %}
+        {% assign part_data = site.data.part05.main %}
+        {% assign part_title = site.data.part05.title | default: "Part 05. 첨단 스마트 센서와 방재 시스템" %}
+        {% assign part_url = site.data.part05.url %}
+      {% elsif top_dir contains "Part06" or top_dir contains "part06" or top_dir contains "part6" or page.url contains "Part06" %}
+        {% assign part_data = site.data.part06.main %}
+        {% assign part_title = site.data.part06.title | default: "Part 06. 유무선 통신과 앱 인벤터 IoT" %}
+        {% assign part_url = site.data.part06.url %}
+      {% elsif top_dir contains "Part07" or top_dir contains "part07" or top_dir contains "part7" or page.url contains "Part07" %}
+        {% assign part_data = site.data.part07.main %}
+        {% assign part_title = site.data.part07.title | default: "Part 07. 부록 아두이노 심화 실습" %}
+        {% assign part_url = site.data.part07.url %}
+      {% elsif top_dir contains "Part08" or top_dir contains "part08" or top_dir contains "part8" or page.url contains "Part08" %}
+        {% assign part_data = site.data.part08.main %}
+        {% assign part_title = site.data.part08.title | default: "Part 08. 다양한 아두이노와 아두이노 나노" %}
+        {% assign part_url = site.data.part08.url %}
+      {% elsif top_dir contains "Part09" or top_dir contains "part09" or top_dir contains "part9" or page.url contains "Part09" %}
+        {% assign part_data = site.data.part09.main %}
+        {% assign part_title = site.data.part09.title | default: "Part 09. 아두이노 메가 대규모 프로젝트" %}
+        {% assign part_url = site.data.part09.url %}
+      {% elsif top_dir contains "Part10" or top_dir contains "part10" or page.url contains "Part10" %}
+        {% assign part_data = site.data.part10.main %}
+        {% assign part_title = site.data.part10.title | default: "Part 10. 라즈베리파이 기초와 하이브리드 연동" %}
+        {% assign part_url = site.data.part10.url %}
+      {% endif %}
+
+      <strong class="bd-links-heading d-flex w-100 align-items-center fw-bold text-dark mb-3 pb-2 border-bottom" style="font-size: 1.05rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-compass me-2 flex-shrink-0 text-primary" viewBox="0 0 16 16">
+          <path d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+          <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.94 2.83 2.82-4.95zm1.06.56a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+        </svg>
+        <span class="text-truncate">{{ part_title }}</span>
+      </strong>
+
+      {% if is_intro %}
+        <!-- 소개하기 서브 메뉴 (등장인물 소개 / 커리큘럼 소개 2개만 깔끔하게 노출) -->
+        <ul class="list-unstyled fw-normal pb-2 small ps-1">
+          <li class="py-1">
+            <a href="/character/"
+               class="bd-sidebar-link {% if page.url contains 'character' %}is-active{% endif %}">
+              <span class="text-truncate">등장인물 소개</span>
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/curriculum/"
+               class="bd-sidebar-link {% if page.url contains 'curriculum' %}is-active{% endif %}">
+              <span class="text-truncate">커리큘럼 소개</span>
+            </a>
+          </li>
+        </ul>
+      {% else %}
+        <!-- Section Items List for Parts -->
+        {% for section in part_data %}
+          {% if section.children %}
+            <div class="mb-3">
+              <ul class="list-unstyled fw-normal pb-2 small ps-1">
+                {% for child in section.children %}
+                  {% assign is_current = false %}
+                  {% if page.url == child.url %}
+                    {% assign is_current = true %}
+                  {% endif %}
+                  <li class="py-1">
+                    <a href="{{ child.url }}"
+                       class="bd-sidebar-link {% if is_current %}is-active{% endif %}"
+                       {% if is_current %}aria-current="page"{% endif %}>
+                      <span class="text-truncate">{{ child.title }}</span>
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </li>
+  </ul>
+</nav>

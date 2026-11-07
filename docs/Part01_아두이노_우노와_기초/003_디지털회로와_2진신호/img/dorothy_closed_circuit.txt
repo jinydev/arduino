@@ -1,0 +1,8 @@
+Studio Ghibli 2D hand-drawn animation style, cel shaded, clear clean lineart, pure solid clean white background, soft floor shadow, no cluttered walls, crisp focus.
+
+Title scene for Arduino lecture about Closed Circuit.
+In the center, a warm Korean male professor (Prof. Hojin, reference 1) with black styled hair, black glasses, navy open jacket over beige shirt, smiling gently as he guides the circuit.
+Beside him, an eager 9-year-old girl (Dorothy, reference 2) with brown braided pigtails, denim overalls, holding a wire and connecting a bright glowing yellow LED light bulb in a complete circular closed loop with a battery.
+On the table, a smart tuxedo bicolour cat with glasses and bell collar (Jiny the lab assistant cat, reference 3) attentively checking the circuit path.
+Beside Dorothy, an adorable fluffy white bichon dog with a sky blue bandana (Toto) watching the glowing bulb excitedly with sparkling eyes.
+Vibrant warm colors, educational, friendly maker lab atmosphere, masterpiece, high quality.

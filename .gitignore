@@ -1,0 +1,17 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+.bundle/
+.DS_Store
+__pycache__/
+*.pyc
+
+# Scratch & temporary files
+scratch/
+build_error.txt
+
+*.pptx
+*.pptx
+아두이노_강의.pptx

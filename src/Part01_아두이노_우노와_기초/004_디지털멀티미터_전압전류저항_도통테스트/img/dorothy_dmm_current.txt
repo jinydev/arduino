@@ -1,0 +1,9 @@
+Studio Ghibli 2D hand-drawn animation style, cel shaded, clear clean lineart, pure solid clean white background, soft floor shadow, no cluttered walls, no speech bubble, crisp focus.
+
+Educational scene about measuring DC electric current in series.
+On a clean maker lab table, a working breadboard circuit has a glowing red LED. A digital multimeter is inserted in series into the circuit loop like a water meter, displaying '18.5 mA' on the screen.
+A kind Korean male professor (Prof. Hojin, reference 1) with black styled hair, glasses, navy jacket, explains the in-line series wiring method.
+Beside him, an attentive 9-year-old girl (Dorothy, reference 2) in denim overalls holds the wire with deep understanding.
+A tuxedo bicolour cat with glasses and bell collar (Jiny the lab assistant cat, reference 3) points its paw to the continuous unbroken circuit flow through the meter.
+A cute fluffy white bichon dog with a sky blue bandana (Toto) sits happily nearby.
+Masterpiece, clear technical accuracy, charming Studio Ghibli style.

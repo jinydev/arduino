@@ -1,0 +1,9 @@
+Studio Ghibli 2D hand-drawn animation style, cel shaded, clear clean lineart, pure solid clean white background, soft floor shadow, no cluttered walls, no speech bubble, crisp focus.
+
+Educational scene demonstrating how a 5V relay module safely switches on a large light bulb.
+On a clean workbench, a blue Arduino board connects to a transparent-cased blue relay module. As the relay clicks shut with an electromagnetic contact, a large household lamp bulb illuminates brightly with warm golden light.
+A kind Korean male professor (Prof. Hojin, reference 1) with black styled hair, glasses, navy jacket, explains electrical isolation and safe high-voltage control.
+Beside him, an amazed 9-year-old girl (Dorothy, reference 2) in denim overalls claps her hands in excitement.
+A smart tuxedo bicolour cat with glasses and bell collar (Jiny the lab assistant cat, reference 3) points its paw to the relay coil terminals.
+A cute fluffy white bichon dog with a sky blue bandana (Toto) wags its tail, enjoying the bright light.
+Masterpiece, clear robotics engineering demonstration, warm Studio Ghibli style.

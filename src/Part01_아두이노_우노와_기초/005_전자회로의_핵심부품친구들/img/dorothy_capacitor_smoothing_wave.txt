@@ -1,0 +1,9 @@
+Studio Ghibli 2D hand-drawn animation style, cel shaded, clear clean lineart, pure solid clean white background, soft floor shadow, no cluttered walls, no speech bubble, crisp focus.
+
+Educational scene explaining capacitor smoothing filter (smoothing out pulsating voltage into steady DC).
+On an oscilloscope screen, a bumpy pulsating waveform is smoothed out into a stable flat green line with capacitor buffering.
+A kind Korean male professor (Prof. Hojin, reference 1) with black styled hair, glasses, navy jacket, explains the water tank buffer principle using a pointer.
+Beside him, an inspired 9-year-old girl (Dorothy, reference 2) in denim overalls smiles with an 'Aha!' expression, mimicking a smooth level surface with her hands.
+A tuxedo bicolour cat with glasses and bell collar (Jiny the lab assistant cat, reference 3) sits by an electronic breadboard adjusting the filter capacitor.
+A cute fluffy white bichon dog with a sky blue bandana (Toto) wags its tail happily.
+Masterpiece, clear technical visualization, warm Studio Ghibli anime style.

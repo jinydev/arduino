@@ -1,0 +1,234 @@
+<style>
+.roadmap-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+.roadmap-title {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+}
+.roadmap-subtitle {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-bottom: 0;
+}
+.roadmap-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1.25rem;
+    padding: 1.75rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.25s ease;
+}
+.roadmap-card:hover {
+    transform: translateY(-4px);
+    border-color: #cbd5e1;
+    box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.05);
+}
+.roadmap-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 9999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: 1.1rem;
+    align-self: flex-start;
+}
+.badge-p1 { background-color: #f1f5f9; color: #475569; }
+.badge-p2 { background-color: #e0f2fe; color: #0284c7; }
+.badge-p3 { background-color: #dcfce7; color: #16a34a; }
+.badge-p4 { background-color: #fef3c7; color: #d97706; }
+.badge-p5 { background-color: #ffe4e6; color: #e11d48; }
+.badge-p6 { background-color: #f3e8ff; color: #9333ea; }
+.badge-p7 { background-color: #e0e7ff; color: #4f46e5; }
+.badge-p8 { background-color: #cffafe; color: #0891b2; }
+.badge-p9 { background-color: #d1fae5; color: #059669; }
+.badge-p10 { background-color: #ffedd5; color: #ea580c; }
+
+.roadmap-card-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+.roadmap-desc {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+.btn-roadmap-action {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 1.15rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1e293b;
+    background-color: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.btn-roadmap-action:hover {
+    background-color: #1e293b;
+    color: #ffffff !important;
+    border-color: #1e293b;
+}
+</style>
+
+<div class="roadmap-header">
+    <h2 class="roadmap-title">🗺️ 아두이노 마법 여정 로드맵</h2>
+    <p class="roadmap-subtitle">총 10개의 핵심 학습 파트로 이루어진 체계적인 피지컬 컴퓨팅 교육 과정입니다.</p>
+</div>
+
+<div class="row g-4">
+    <!-- Part 01 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p1">01. 우노와 기초</span>
+            <h4 class="roadmap-card-title">우노 & 전자회로 기초</h4>
+            <p class="roadmap-desc">
+                에너지와 전기의 원리, 옴의 법칙, 브레드보드 사용법부터 아두이노 IDE 설치와 C언어 기본 문법까지 기초를 탄탄히 다집니다.
+            </p>
+            <a href="{{ '/Part01_아두이노_우노와_기초/000_강의소개_아두이노모험의시작/' | relative_url }}" class="btn-roadmap-action">
+                학습 시작 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 02 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p2">02. PWM과 센서</span>
+            <h4 class="roadmap-card-title">PWM & 기초 센서</h4>
+            <p class="roadmap-desc">
+                PWM 듀티사이클 원리, RGB LED 색상 혼합, 조도센서(CdS), 서미스터 온도센서, 피에조 부저 멜로디 연주를 마스터합니다.
+            </p>
+            <a href="{{ '/Part02_아날로그_출력과_기초_센서/032_PWM원리_눈속임깜빡임마법/' | relative_url }}" class="btn-roadmap-action">
+                센서 정복 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 03 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p3">03. 환경센서 & LCD</span>
+            <h4 class="roadmap-card-title">환경센서 & 캐릭터 LCD</h4>
+            <p class="roadmap-desc">
+                수위/토양수분/빗물 센서, 초음파 거리측정, 온습도(DHT11), 그리고 I2C 1602 캐릭터 LCD 화면 출력까지 실생활 센서를 정복합니다.
+            </p>
+            <a href="{{ '/Part03_생활_환경_센서와_디스플레이/058_수위감지센서_물높이측정/' | relative_url }}" class="btn-roadmap-action">
+                환경 센서 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 04 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p4">04. 디스플레이 & 모터</span>
+            <h4 class="roadmap-card-title">모터 구동 & OLED 디스플레이</h4>
+            <p class="roadmap-desc">
+                서보모터 각도 제어, DC모터와 L298N 드라이버, 스테핑 모터 정밀 제어, 7세그먼트, 8x8 도트매트릭스와 0.96인치 OLED를 완성합니다.
+            </p>
+            <a href="{{ '/Part04_그래픽_디스플레이와_모터_구동/074_C언어배열_데이터줄줄이기차/' | relative_url }}" class="btn-roadmap-action">
+                모터 제어 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 05 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p5">05. 스마트 센서 & 방재</span>
+            <h4 class="roadmap-card-title">첨단 스마트 센서 & 방재</h4>
+            <p class="roadmap-desc">
+                정전식 터치센서, 불꽃/가스 센서, 인체감지(PIR), 진동/기울기 센서와 릴레이 모듈을 결합한 스마트 방재 화재경보 시스템을 구축합니다.
+            </p>
+            <a href="{{ '/Part05_첨단_스마트_센서와_방재_시스템/113_정전식터치센서_TTP223/' | relative_url }}" class="btn-roadmap-action">
+                방재 시스템 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 06 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p6">06. 유무선통신 & IoT</span>
+            <h4 class="roadmap-card-title">유무선 통신 & IoT 앱 인벤터</h4>
+            <p class="roadmap-desc">
+                I2C/SPI 다중 통신, 블루투스(HC-06), 스마트폰 앱 인벤터 연동, 와이파이(ESP8266/ESP32)와 클라우드 데이터 송수신을 다룹니다.
+            </p>
+            <a href="{{ '/Part06_유무선_통신과_앱_인벤터_IoT/123_다중아두이노_네트워크개요/' | relative_url }}" class="btn-roadmap-action">
+                IoT 무선통신 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 07 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p7">07. 심화부록 & 확장</span>
+            <h4 class="roadmap-card-title">심화 실습 & 확장 모듈 (부록)</h4>
+            <p class="roadmap-desc">
+                외부 고정밀 ADC 컨버터, RTC 실시간 시계 모듈(DS3231), 마이크로SD 카드 로거, EEPROM 데이터 비휘발성 저장 테크닉을 배웁니다.
+            </p>
+            <a href="{{ '/Part07_부록_아두이노_추가실습/153_외부ADC컨버터_초정밀계측/' | relative_url }}" class="btn-roadmap-action">
+                심화 부록 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 08 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p8">08. 나노 & 패밀리</span>
+            <h4 class="roadmap-card-title">아두이노 패밀리 & 나노</h4>
+            <p class="roadmap-desc">
+                초소형 아두이노 나노(Nano), 프로 미니, 레오나르도(HID 마우스/키보드), 배터리 전원 관리와 저전력 슬립 모드를 정복합니다.
+            </p>
+            <a href="{{ '/Part08_다양한_아두이노와_나노/161_아두이노나노_초소형의마법/' | relative_url }}" class="btn-roadmap-action">
+                나노 탐구 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 09 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p9">09. 메가 & 대규모</span>
+            <h4 class="roadmap-card-title">아두이노 메가 & 캡스톤 프로젝트</h4>
+            <p class="roadmap-desc">
+                54개 핀 아두이노 메가 2560의 하드웨어 시리얼 4채널을 활용하여 스마트 팜 종합 관제 시스템, 무인 로봇 카 캡스톤을 제작합니다.
+            </p>
+            <a href="{{ '/Part09_아두이노_메가_대규모프로젝트/170_아두이노메가2560_대규모프로젝트의거인/' | relative_url }}" class="btn-roadmap-action">
+                메가 캡스톤 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 10 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p10">10. 라즈베리파이</span>
+            <h4 class="roadmap-card-title">라즈베리파이 & 하이브리드</h4>
+            <p class="roadmap-desc">
+                리눅스 OS 기반 라즈베리파이 환경 구축, 파이썬 GPIO 제어, 시리얼 통신으로 아두이노와 라즈베리파이를 결합한 하이브리드 IoT를 완성합니다.
+            </p>
+            <a href="{{ '/Part10_라즈베리파이_기초/185_라즈베리파이란_소형컴퓨터세상/' | relative_url }}" class="btn-roadmap-action">
+                하이브리드 ➔
+            </a>
+        </div>
+    </div>
+</div>

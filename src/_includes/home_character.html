@@ -1,0 +1,83 @@
+<!-- 캐릭터 소개 섹션 -->
+<div class="card border-0 rounded-4 p-4 p-md-5 mb-5 shadow-sm" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border: 1px solid #e2e8f0 !important;">
+    <div class="row align-items-center mb-4">
+        <div class="col-lg-8">
+            <span class="badge rounded-pill px-3 py-2 fw-bold mb-2" style="background-color: #dcfce7; color: #166534;">Characters</span>
+            <h3 class="fw-bold mb-2" style="color: #1e293b;">🧭 아두이노 모험 4총사를 소개합니다</h3>
+            <p class="text-secondary mb-0">
+                복잡한 전자회로와 코딩을 <strong>이호진 교수님</strong>, 호기심 많은 소녀 <strong>도로시</strong>, 영리한 조수 고양이 <strong>지니</strong>, 반려견 <strong>토토</strong>와 함께 즐겁게 탐험합니다.
+            </p>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+            <a href="{{ '/character/' | relative_url }}" class="btn btn-outline-success rounded-pill px-4 py-2 fw-bold">
+                캐릭터 상세 소개 ➔
+            </a>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <!-- 이호진 교수님 -->
+        <div class="col-md-6 col-lg-3">
+            <a href="{{ '/character/' | relative_url }}" class="text-decoration-none text-reset d-block h-100">
+                <div class="card h-100 border-0 rounded-4 p-3 text-center bg-white shadow-sm transition-hover">
+                    <div class="d-flex justify-content-center align-items-center my-3" style="height: 120px;">
+                        <img src="{{ '/img/character_hojin.png' | relative_url }}" alt="이호진 교수님" style="max-height: 120px; width: auto; object-fit: contain;">
+                    </div>
+                    <h5 class="fw-bold mb-1" style="color: #1e293b;">이호진 교수님</h5>
+                    <p class="small text-muted mb-2"><span class="badge rounded-pill bg-success-subtle text-success px-2 py-1">총괄 멘토</span></p>
+                    <p class="card-text text-secondary small mb-0">
+                        전자회로와 마이크로컨트롤러의 기초 원리부터 친절하게 가르쳐 주시는 멘토 교수님!
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 도로시 -->
+        <div class="col-md-6 col-lg-3">
+            <a href="{{ '/character/' | relative_url }}" class="text-decoration-none text-reset d-block h-100">
+                <div class="card h-100 border-0 rounded-4 p-3 text-center bg-white shadow-sm transition-hover">
+                    <div class="d-flex justify-content-center align-items-center my-3" style="height: 120px;">
+                        <img src="{{ '/img/character_dorothy.png' | relative_url }}" alt="도로시" style="max-height: 120px; width: auto; object-fit: contain;">
+                    </div>
+                    <h5 class="fw-bold mb-1" style="color: #1e293b;">도로시</h5>
+                    <p class="small text-muted mb-2"><span class="badge rounded-pill bg-warning-subtle text-warning-emphasis px-2 py-1">주니어 메이커</span></p>
+                    <p class="card-text text-secondary small mb-0">
+                        "어떻게 불이 켜져요?" 호기심 가득한 눈으로 직접 빵판에 부품을 꽂고 코딩하며 성장하는 9세 소녀!
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 조교 지니 -->
+        <div class="col-md-6 col-lg-3">
+            <a href="{{ '/character/' | relative_url }}" class="text-decoration-none text-reset d-block h-100">
+                <div class="card h-100 border-0 rounded-4 p-3 text-center bg-white shadow-sm transition-hover">
+                    <div class="d-flex justify-content-center align-items-center my-3" style="height: 120px;">
+                        <img src="{{ '/img/character_jiny.png' | relative_url }}" alt="조수 지니" style="max-height: 120px; width: auto; object-fit: contain;">
+                    </div>
+                    <h5 class="fw-bold mb-1" style="color: #1e293b;">조수 지니</h5>
+                    <p class="small text-muted mb-2"><span class="badge rounded-pill bg-info-subtle text-info-emphasis px-2 py-1">연구실 조수</span></p>
+                    <p class="card-text text-secondary small mb-0">
+                        단정한 안경을 쓴 턱시도 고양이! 저항값이 틀리거나 쇼트가 나면 날카롭게 원인을 짚어줍니다.
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 토토 -->
+        <div class="col-md-6 col-lg-3">
+            <a href="{{ '/character/' | relative_url }}" class="text-decoration-none text-reset d-block h-100">
+                <div class="card h-100 border-0 rounded-4 p-3 text-center bg-white shadow-sm transition-hover">
+                    <div class="d-flex justify-content-center align-items-center my-3" style="height: 120px;">
+                        <img src="{{ '/img/character_toto.png' | relative_url }}" alt="토토" style="max-height: 120px; width: auto; object-fit: contain;">
+                    </div>
+                    <h5 class="fw-bold mb-1" style="color: #1e293b;">토토</h5>
+                    <p class="small text-muted mb-2"><span class="badge rounded-pill bg-primary-subtle text-primary-emphasis px-2 py-1">응원 대장</span></p>
+                    <p class="card-text text-secondary small mb-0">
+                        스카이블루 반다나를 두른 도로시의 반려견! 업로드가 성공하면 꼬리를 흔들며 신나게 응원합니다.
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

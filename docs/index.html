@@ -1,0 +1,962 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>지니와 도로시가 함께하는 아두이노와 전자 세상 탐험 | 이호진 교수님과 함께하는 아두이노 193강 마스터 클래스 (우노, 나노, 메가 &amp; 라즈베리파이)</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="지니와 도로시가 함께하는 아두이노와 전자 세상 탐험" />
+<meta name="author" content="Hojin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="이호진 교수님과 함께하는 아두이노 193강 마스터 클래스 (우노, 나노, 메가 &amp; 라즈베리파이)" />
+<meta name="twitter:description" property="og:description" content="이호진 교수님과 함께하는 아두이노 193강 마스터 클래스 (우노, 나노, 메가 &amp; 라즈베리파이)" />
+<link rel="canonical" href="https://arduino.jiny.dev/" />
+<meta property="og:url" content="https://arduino.jiny.dev/" />
+<meta property="og:site_name" content="지니와 도로시가 함께하는 아두이노와 전자 세상 탐험" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="지니와 도로시가 함께하는 아두이노와 전자 세상 탐험" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Hojin"},"description":"이호진 교수님과 함께하는 아두이노 193강 마스터 클래스 (우노, 나노, 메가 &amp; 라즈베리파이)","headline":"지니와 도로시가 함께하는 아두이노와 전자 세상 탐험","name":"지니와 도로시가 함께하는 아두이노와 전자 세상 탐험","url":"https://arduino.jiny.dev/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/css/docs.css?v=1794032219" rel="stylesheet" />
+  <link href="/assets/css/highlight.css" rel="stylesheet" />
+
+  <style>
+    /* Table Styling: 회색 실선 테두리 및 가독성 최적화 */
+    .bd-content table {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      margin-top: 1.5rem !important;
+      margin-bottom: 2rem !important;
+      font-size: 0.95rem !important;
+      border: 1px solid #cbd5e1 !important;
+      border-spacing: 0 !important;
+      background-color: #ffffff !important;
+    }
+
+    .bd-content table thead th {
+      background-color: #f1f5f9 !important;
+      color: #1e293b !important;
+      font-weight: 700 !important;
+      border: 1px solid #cbd5e1 !important;
+      padding: 0.75rem 1rem !important;
+      vertical-align: middle !important;
+      text-align: left !important;
+    }
+
+    .bd-content table tbody td {
+      border: 1px solid #cbd5e1 !important;
+      padding: 0.75rem 1rem !important;
+      color: #334155 !important;
+      vertical-align: top !important;
+      background-color: #ffffff !important;
+    }
+
+    .bd-content table tbody tr:nth-of-type(even) td {
+      background-color: #f8fafc !important;
+    }
+
+    .bd-content table tbody tr:hover td {
+      background-color: #f1f5f9 !important;
+    }
+
+    @media (max-width: 768px) {
+      .bd-content table {
+        display: block !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+    }
+  </style>
+
+  <style>
+    blockquote {
+      border-left: solid 5px #dee2e6;
+      padding: 5px 10px;
+      background-color: #f8f9fa;
+    }
+  </style>
+
+  <style>
+    h1 a {
+      text-decoration: none;
+    }
+
+    h2 a {
+      text-decoration: none;
+    }
+
+    h3 a {
+      text-decoration: none;
+    }
+
+    h4 a {
+      text-decoration: none;
+    }
+
+    h5 a {
+      text-decoration: none;
+    }
+
+    h6 a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: top
+    }
+
+    strong a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 스크롤바 커스텀 */
+    /* 임의의 영역 생성 */
+    .scrollBar {}
+
+    /* 아래의 모든 코드는 영역::코드로 사용 */
+    .scrollBar::-webkit-scrollbar {
+      width: 7px;
+      /* 스크롤바의 너비 */
+    }
+
+    .scrollBar::-webkit-scrollbar-thumb {
+      height: 30%;
+      /* 스크롤바의 길이 */
+      background: #cccccc;
+      /* 스크롤바의 색상 */
+
+      border-radius: 5px;
+    }
+
+    .scrollBar::-webkit-scrollbar-track {
+      background: rgba(33, 122, 244, .1);
+      /*스크롤바 뒷 배경 색상*/
+    }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-R4VBPCT3CR');
+  </script>
+
+  <!-- MathJax for LaTeX Rendering -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+</head>
+
+<body>
+  <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+    <nav class="container bd-gutter flex-wrap flex-lg-nowrap position-relative" aria-label="Main navigation">
+
+      <!-- Mobile: Left Toggle (Browse) -->
+      <div class="bd-navbar-toggle d-lg-none">
+        <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar"
+          aria-controls="bdSidebar" aria-label="Toggle docs navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi" fill="currentColor"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
+            </path>
+          </svg>
+          <span class="d-none fs-6 pe-1">Browse</span>
+        </button>
+      </div>
+
+      <!-- Brand: Desktop (Static), Mobile (Absolute Center) -->
+      <a class="navbar-brand p-0 me-0 me-lg-2 ms-lg-0 d-none d-lg-inline-block" href="/" aria-label="jinydev">
+        <svg width="32" height="26" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.2746 5.33377C25.8486 7.33981 25.1183 11.1792 24.3961 13.0177C24.4028 13.0199 24.4094 13.0221 24.4161 13.0243L24.4013 13.0248L22.649 12.9082C22.649 12.9053 22.6488 12.9013 22.649 12.8993C22.9902 8.93373 22.5975 7.34575 22.2147 7.07677C17.6316 10.3896 13.5379 9.33658 12.2725 9.01111C11.928 8.9225 11.7932 8.88781 11.9152 9.00988C12.2872 9.38185 13.1336 9.82821 13.7371 10.1465H13.7372L13.7376 10.1467C13.8743 10.2188 13.9985 10.2843 14.1019 10.3409C9.12673 10.3984 7.12659 8.00279 6.53855 7.29846C6.47859 7.22664 6.4333 7.1724 6.40105 7.14015C6.11408 6.85318 4.49961 5.87252 3.99256 7.74227C3.50142 9.55335 3.81246 11.6775 3.97665 12.7988C3.99089 12.896 3.99257 12.8981 3.99257 12.9298L2.37635 13.0248L2.37213 13.0247C0.223493 8.05534 1.83854 5.26971 3.29536 4.2246C3.29536 1.78444 6.27428 -0.592359 10.0455 0.263262C14.8768 1.64043 16.3468 1.18409 18.0759 0.647278C18.774 0.430562 19.5143 0.200726 20.5351 0.073124C25.2219 -0.512739 26.7993 2.56612 27 4.16122C26.2141 3.70487 24.8556 4.73165 24.2746 5.33377ZM12.3374 1.5872C11.1225 1.16466 7.99257 0.717209 6.3478 2.41116C5.98397 2.78587 5.55554 3.48864 5.55554 3.48864C5.55554 3.48864 4.82665 4.81961 4.25622 4.24919C3.68579 3.67878 5.0168 1.96749 6.06259 1.46044C7.10838 0.953388 9.70703 0.0660505 12.3374 1.5872Z"
+            fill="currentColor" />
+          <path
+            d="M10.078 13.5002H3.10601C2.2309 13.5002 1.52148 14.2097 1.52148 15.0848V18.3172C1.52148 19.1923 2.2309 19.9018 3.10601 19.9018H10.078C10.9531 19.9018 11.6625 19.1923 11.6625 18.3172V15.0848C11.6625 14.2097 10.9531 13.5002 10.078 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M0.823513 14.6094H0.379847C0.187322 14.6094 0.03125 14.7654 0.03125 14.958V15.9721C0.03125 16.1646 0.187322 16.3207 0.379847 16.3207H0.823513C1.01604 16.3207 1.17211 16.1646 1.17211 15.9721V14.958C1.17211 14.7654 1.01604 14.6094 0.823513 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M16.7326 13.5002H23.7045C24.5796 13.5002 25.2891 14.2097 25.2891 15.0848V18.3172C25.2891 19.1923 24.5796 19.9018 23.7045 19.9018H16.7326C15.8575 19.9018 15.1481 19.1923 15.1481 18.3172V15.0848C15.1481 14.2097 15.8575 13.5002 16.7326 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M25.9861 14.6094H26.4297C26.6222 14.6094 26.7783 14.7654 26.7783 14.958V15.9721C26.7783 16.1646 26.6222 16.3207 26.4297 16.3207H25.9861C25.7935 16.3207 25.6375 16.1646 25.6375 15.9721V14.958C25.6375 14.7654 25.7935 14.6094 25.9861 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M12.2954 15.5601H14.5137C14.7062 15.5601 14.8623 15.7161 14.8623 15.9087V16.9228C14.8623 17.1153 14.7062 17.2713 14.5137 17.2713H12.2954C12.1028 17.2713 11.9468 17.1153 11.9468 16.9228V15.9087C11.9468 15.7161 12.1028 15.5601 12.2954 15.5601Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M9.93343 16.3937C9.93343 16.7087 9.76317 16.9641 9.55314 16.9641C9.34311 16.9641 9.17285 16.7087 9.17285 16.3937C9.17285 16.0786 9.34311 15.8232 9.55314 15.8232C9.76317 15.8232 9.93343 16.0786 9.93343 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M16.9688 16.3937C16.9688 16.7087 17.139 16.9641 17.3491 16.9641C17.5591 16.9641 17.7293 16.7087 17.7293 16.3937C17.7293 16.0786 17.5591 15.8232 17.3491 15.8232C17.139 15.8232 16.9688 16.0786 16.9688 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M14.2758 20.1016C13.642 20.6086 12.7863 20.3551 12.5645 20.1016C12.6278 20.4185 12.8687 20.8622 13.4518 20.8622C14.0349 20.8622 14.2441 20.3551 14.2758 20.1016Z"
+            fill="currentColor" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.1312 22.411C12.1575 22.2914 12.2759 22.2157 12.3956 22.2421L14.6347 22.735C14.7544 22.7614 14.83 22.8797 14.8036 22.9994C14.7773 23.119 14.659 23.1947 14.5393 23.1683L12.3002 22.6753C12.1805 22.649 12.1049 22.5307 12.1312 22.411Z"
+            fill="currentColor" />
+          <path
+            d="M13.4203 27.6754C9.00897 27.7261 5.77228 23.6613 4.70536 21.6225C4.54691 21.3197 4.42016 21.2739 4.32509 21.3373C4.17297 21.4387 4.28282 21.6437 4.32507 21.7493C4.85747 22.9916 5.58213 24.0416 5.87791 24.4113C4.83846 26.1353 4.49409 27.855 4.45183 28.4994C6.1758 26.8008 7.91668 26.8832 8.57162 27.1367C13.7055 29.7987 16.5577 27.929 18.1739 27.1367C19.4669 26.5029 21.4803 27.7388 22.3254 28.436C22.224 26.8642 21.3747 25.1402 20.9627 24.4747C21.6282 23.5873 22.1669 22.5099 22.4522 21.9711C22.6803 21.5401 22.6106 21.369 22.5472 21.3373C22.3951 21.2613 22.2092 21.4958 22.1353 21.6225C21.6599 22.4148 18.9345 27.6121 13.4203 27.6754Z"
+            fill="currentColor" />
+        </svg>
+      </a>
+      <a class="navbar-brand p-0 me-0 position-absolute top-50 start-50 translate-middle d-lg-none" href="/"
+        aria-label="jinydev">
+        <svg width="100" height="26" viewBox="0 0 112 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.2746 5.33377C25.8486 7.33981 25.1183 11.1792 24.3961 13.0177C24.4028 13.0199 24.4094 13.0221 24.4161 13.0243L24.4013 13.0248L22.649 12.9082C22.649 12.9053 22.6488 12.9013 22.649 12.8993C22.9902 8.93373 22.5975 7.34575 22.2147 7.07677C17.6316 10.3896 13.5379 9.33658 12.2725 9.01111C11.928 8.9225 11.7932 8.88781 11.9152 9.00988C12.2872 9.38185 13.1336 9.82821 13.7371 10.1465H13.7372L13.7376 10.1467C13.8743 10.2188 13.9985 10.2843 14.1019 10.3409C9.12673 10.3984 7.12659 8.00279 6.53855 7.29846C6.47859 7.22664 6.4333 7.1724 6.40105 7.14015C6.11408 6.85318 4.49961 5.87252 3.99256 7.74227C3.50142 9.55335 3.81246 11.6775 3.97665 12.7988C3.99089 12.896 3.99257 12.8981 3.99257 12.9298L2.37635 13.0248L2.37213 13.0247C0.223493 8.05534 1.83854 5.26971 3.29536 4.2246C3.29536 1.78444 6.27428 -0.592359 10.0455 0.263262C14.8768 1.64043 16.3468 1.18409 18.0759 0.647278C18.774 0.430562 19.5143 0.200726 20.5351 0.073124C25.2219 -0.512739 26.7993 2.56612 27 4.16122C26.2141 3.70487 24.8556 4.73165 24.2746 5.33377ZM12.3374 1.5872C11.1225 1.16466 7.99257 0.717209 6.3478 2.41116C5.98397 2.78587 5.55554 3.48864 5.55554 3.48864C5.55554 3.48864 4.82665 4.81961 4.25622 4.24919C3.68579 3.67878 5.0168 1.96749 6.06259 1.46044C7.10838 0.953388 9.70703 0.0660505 12.3374 1.5872Z"
+            fill="currentColor" />
+          <path
+            d="M10.078 13.5002H3.10601C2.2309 13.5002 1.52148 14.2097 1.52148 15.0848V18.3172C1.52148 19.1923 2.2309 19.9018 3.10601 19.9018H10.078C10.9531 19.9018 11.6625 19.1923 11.6625 18.3172V15.0848C11.6625 14.2097 10.9531 13.5002 10.078 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M0.823513 14.6094H0.379847C0.187322 14.6094 0.03125 14.7654 0.03125 14.958V15.9721C0.03125 16.1646 0.187322 16.3207 0.379847 16.3207H0.823513C1.01604 16.3207 1.17211 16.1646 1.17211 15.9721V14.958C1.17211 14.7654 1.01604 14.6094 0.823513 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M16.7326 13.5002H23.7045C24.5796 13.5002 25.2891 14.2097 25.2891 15.0848V18.3172C25.2891 19.1923 24.5796 19.9018 23.7045 19.9018H16.7326C15.8575 19.9018 15.1481 19.1923 15.1481 18.3172V15.0848C15.1481 14.2097 15.8575 13.5002 16.7326 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M25.9861 14.6094H26.4297C26.6222 14.6094 26.7783 14.7654 26.7783 14.958V15.9721C26.7783 16.1646 26.6222 16.3207 26.4297 16.3207H25.9861C25.7935 16.3207 25.6375 16.1646 25.6375 15.9721V14.958C25.6375 14.7654 25.7935 14.6094 25.9861 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M12.2954 15.5601H14.5137C14.7062 15.5601 14.8623 15.7161 14.8623 15.9087V16.9228C14.8623 17.1153 14.7062 17.2713 14.5137 17.2713H12.2954C12.1028 17.2713 11.9468 17.1153 11.9468 16.9228V15.9087C11.9468 15.7161 12.1028 15.5601 12.2954 15.5601Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M9.93343 16.3937C9.93343 16.7087 9.76317 16.9641 9.55314 16.9641C9.34311 16.9641 9.17285 16.7087 9.17285 16.3937C9.17285 16.0786 9.34311 15.8232 9.55314 15.8232C9.76317 15.8232 9.93343 16.0786 9.93343 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M16.9688 16.3937C16.9688 16.7087 17.139 16.9641 17.3491 16.9641C17.5591 16.9641 17.7293 16.7087 17.7293 16.3937C17.7293 16.0786 17.5591 15.8232 17.3491 15.8232C17.139 15.8232 16.9688 16.0786 16.9688 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M14.2758 20.1016C13.642 20.6086 12.7863 20.3551 12.5645 20.1016C12.6278 20.4185 12.8687 20.8622 13.4518 20.8622C14.0349 20.8622 14.2441 20.3551 14.2758 20.1016Z"
+            fill="currentColor" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.1312 22.411C12.1575 22.2914 12.2759 22.2157 12.3956 22.2421L14.6347 22.735C14.7544 22.7614 14.83 22.8797 14.8036 22.9994C14.7773 23.119 14.659 23.1947 14.5393 23.1683L12.3002 22.6753C12.1805 22.649 12.1049 22.5307 12.1312 22.411Z"
+            fill="currentColor" />
+          <path
+            d="M13.4203 27.6754C9.00897 27.7261 5.77228 23.6613 4.70536 21.6225C4.54691 21.3197 4.42016 21.2739 4.32509 21.3373C4.17297 21.4387 4.28282 21.6437 4.32507 21.7493C4.85747 22.9916 5.58213 24.0416 5.87791 24.4113C4.83846 26.1353 4.49409 27.855 4.45183 28.4994C6.1758 26.8008 7.91668 26.8832 8.57162 27.1367C13.7055 29.7987 16.5577 27.929 18.1739 27.1367C19.4669 26.5029 21.4803 27.7388 22.3254 28.436C22.224 26.8642 21.3747 25.1402 20.9627 24.4747C21.6282 23.5873 22.1669 22.5099 22.4522 21.9711C22.6803 21.5401 22.6106 21.369 22.5472 21.3373C22.3951 21.2613 22.2092 21.4958 22.1353 21.6225C21.6599 22.4148 18.9345 27.6121 13.4203 27.6754Z"
+            fill="currentColor" />
+          <text x="32" y="21" font-family="Arial, sans-serif" font-weight="bold" font-size="22"
+            fill="currentColor">Jiny</text>
+        </svg>
+      </a>
+
+      <!-- Mobile: Right Toggle (Menu) -->
+      <div class="d-flex d-lg-none ms-auto">
+        <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar"
+          aria-controls="bdNavbar" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid"
+            viewBox="0 0 16 16">
+            <path
+              d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- OffCanvas -->
+      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar"
+        aria-labelledby="bdNavbarOffcanvasLabel" data-bs-scroll="true">
+        <!-- OffCanver Header -->
+        <div class="offcanvas-header px-4 pb-0">
+          <h5 class="offcanvas-title text-white" id="bdNavbarOffcanvasLabel">Jiny</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"
+            data-bs-target="#bdNavbar">
+          </button>
+        </div>
+
+        <!-- OffCanver Body -->
+        <div class="offcanvas-body p-4 pt-0 p-lg-0">
+          <hr class="d-lg-none text-white-50">
+
+          <ul class="navbar-nav flex-column flex-lg-row bd-navbar-nav">
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/character/">소개하기</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part01_아두이노_우노와_기초/000_강의소개_아두이노모험의시작/">우노&기초</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part02_아날로그_출력과_기초_센서/032_PWM원리_눈속임깜빡임마법/">PWM&센서</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part03_생활_환경_센서와_디스플레이/058_수위감지센서_물높이측정/">환경센서&LCD</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part04_그래픽_디스플레이와_모터_구동/074_C언어배열_데이터줄줄이기차/">모터&OLED</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part05_첨단_스마트_센서와_방재_시스템/113_정전식터치센서_TTP223/">스마트방재</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part06_유무선_통신과_앱_인벤터_IoT/123_다중아두이노_네트워크개요/">통신&IoT</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part07_부록_아두이노_추가실습/153_외부ADC컨버터_초정밀계측/">추가실습</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part08_다양한_아두이노와_나노/161_다양한아두이노보드형제들/">나노&패밀리</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part09_아두이노_메가_대규모프로젝트/170_아두이노메가_소개와_핀부자MCU/">메가프로젝트</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part10_라즈베리파이_기초/185_라즈베리파이_소개와_SBC하드웨어스펙/">라즈베리파이</a>
+            </li>
+            
+          </ul>
+
+          <hr class="d-lg-none text-white-50">
+
+          <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+            <li class="nav-item col-6 col-lg-auto">
+              <a class="nav-link py-2 px-0 px-lg-2" href="https://github.com/jinydev" target="_blank"
+                rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                  viewBox="0 0 512 499.36" role="img">
+                  <title>GitHub</title>
+                  <path fill="currentColor" fill-rule="evenodd"
+                    d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z">
+                  </path>
+                </svg>
+                <small class="d-lg-none ms-2">GitHub</small>
+              </a>
+            </li>
+
+            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+              <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+              <hr class="d-lg-none my-2 text-white-50">
+            </li>
+
+            <li class="nav-item col-6 col-lg-auto">
+              <a class="nav-link py-2 px-0 px-lg-2" href="https://jiny.dev" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                  viewBox="0 0 16 16" role="img">
+                  <title>Home</title>
+                  <path fill="currentColor"
+                    d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+                </svg>
+                <small class="d-lg-none ms-2">Home</small>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="w-100 pb-5">
+    <style>
+    .hero-section {
+        background: linear-gradient(180deg, #f8faff 0%, #edf3fb 100%);
+        padding: 4.5rem 1.5rem;
+        /*border-radius: 0 0 2.5rem 2.5rem;*/
+        margin-bottom: 3.5rem;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .hero-title {
+        font-size: 2.85rem;
+        font-weight: 800;
+        color: #1e293b;
+        line-height: 1.25;
+        letter-spacing: -0.03em;
+    }
+
+    .hero-subtitle {
+        font-size: 1.15rem;
+        color: #64748b;
+        margin-top: 1.25rem;
+        margin-bottom: 2.25rem;
+        line-height: 1.65;
+    }
+
+    .hero-image-card {
+        background: #ffffff;
+        padding: 0.6rem;
+        border-radius: 1.75rem;
+        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08), 0 0 1px 1px rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(226, 232, 240, 0.8);
+        display: inline-block;
+        max-width: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-image-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-image {
+        width: 100%;
+        height: auto;
+        border-radius: 1.35rem;
+        display: block;
+        object-fit: cover;
+    }
+
+    .btn-hero-primary {
+        background-color: #273849;
+        color: #ffffff !important;
+        border: none;
+        border-radius: 9999px;
+        padding: 0.85rem 2rem;
+        font-weight: 600;
+        font-size: 1.05rem;
+        box-shadow: 0 4px 12px rgba(39, 56, 73, 0.18);
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        text-decoration: none;
+    }
+
+    .btn-hero-primary:hover {
+        background-color: #1a2634;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(39, 56, 73, 0.28);
+        color: #ffffff !important;
+    }
+
+    .btn-hero-outline {
+        background-color: #ffffff;
+        border: 1.5px solid #273849;
+        color: #273849 !important;
+        border-radius: 9999px;
+        padding: 0.85rem 2rem;
+        font-weight: 600;
+        font-size: 1.05rem;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        text-decoration: none;
+    }
+
+    .btn-hero-outline:hover {
+        background-color: #f1f5f9;
+        border-color: #1a2634;
+        color: #1a2634 !important;
+        transform: translateY(-2px);
+    }
+</style>
+
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0 pe-lg-4">
+                <h1 class="hero-title">
+                    지니와 도로시가 함께<br>
+                    학습하는 아두이노
+                </h1>
+                <p class="hero-subtitle">
+                    이호진 교수님이 가르쳐주는 친절한 원리와 실습 코드로<br>
+                    기초 전자회로부터 스마트 IoT, 로보틱스까지 완벽히 정복합니다!
+                </p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                    <a href="/Part01_%EC%95%84%EB%91%90%EC%9D%B4%EB%85%B8_%EC%9A%B0%EB%85%B8%EC%99%80_%EA%B8%B0%EC%B4%88/000_%EA%B0%95%EC%9D%98%EC%86%8C%EA%B0%9C_%EC%95%84%EB%91%90%EC%9D%B4%EB%85%B8%EB%AA%A8%ED%97%98%EC%9D%98%EC%8B%9C%EC%9E%91/" class="btn-hero-primary">
+                        소개하기부터 시작 ➔
+                    </a>
+                    <a href="/curriculum/" class="btn-hero-outline">
+                        커리큘럼 살펴보기
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="hero-image-card">
+                    <img src="/img/arduino_hero_banner.jpg" alt="지니와 도로시의 아두이노 전자 모험"
+                        class="hero-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <style>
+.roadmap-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+.roadmap-title {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+}
+.roadmap-subtitle {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-bottom: 0;
+}
+.roadmap-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1.25rem;
+    padding: 1.75rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.25s ease;
+}
+.roadmap-card:hover {
+    transform: translateY(-4px);
+    border-color: #cbd5e1;
+    box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.05);
+}
+.roadmap-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 9999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: 1.1rem;
+    align-self: flex-start;
+}
+.badge-p1 { background-color: #f1f5f9; color: #475569; }
+.badge-p2 { background-color: #e0f2fe; color: #0284c7; }
+.badge-p3 { background-color: #dcfce7; color: #16a34a; }
+.badge-p4 { background-color: #fef3c7; color: #d97706; }
+.badge-p5 { background-color: #ffe4e6; color: #e11d48; }
+.badge-p6 { background-color: #f3e8ff; color: #9333ea; }
+.badge-p7 { background-color: #e0e7ff; color: #4f46e5; }
+.badge-p8 { background-color: #cffafe; color: #0891b2; }
+.badge-p9 { background-color: #d1fae5; color: #059669; }
+.badge-p10 { background-color: #ffedd5; color: #ea580c; }
+
+.roadmap-card-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+.roadmap-desc {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+.btn-roadmap-action {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 1.15rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1e293b;
+    background-color: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.btn-roadmap-action:hover {
+    background-color: #1e293b;
+    color: #ffffff !important;
+    border-color: #1e293b;
+}
+</style>
+
+<div class="roadmap-header">
+    <h2 class="roadmap-title">🗺️ 아두이노 마법 여정 로드맵</h2>
+    <p class="roadmap-subtitle">총 10개의 핵심 학습 파트로 이루어진 체계적인 피지컬 컴퓨팅 교육 과정입니다.</p>
+</div>
+
+<div class="row g-4">
+    <!-- Part 01 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p1">01. 우노와 기초</span>
+            <h4 class="roadmap-card-title">우노 & 전자회로 기초</h4>
+            <p class="roadmap-desc">
+                에너지와 전기의 원리, 옴의 법칙, 브레드보드 사용법부터 아두이노 IDE 설치와 C언어 기본 문법까지 기초를 탄탄히 다집니다.
+            </p>
+            <a href="/Part01_%EC%95%84%EB%91%90%EC%9D%B4%EB%85%B8_%EC%9A%B0%EB%85%B8%EC%99%80_%EA%B8%B0%EC%B4%88/000_%EA%B0%95%EC%9D%98%EC%86%8C%EA%B0%9C_%EC%95%84%EB%91%90%EC%9D%B4%EB%85%B8%EB%AA%A8%ED%97%98%EC%9D%98%EC%8B%9C%EC%9E%91/" class="btn-roadmap-action">
+                학습 시작 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 02 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p2">02. PWM과 센서</span>
+            <h4 class="roadmap-card-title">PWM & 기초 센서</h4>
+            <p class="roadmap-desc">
+                PWM 듀티사이클 원리, RGB LED 색상 혼합, 조도센서(CdS), 서미스터 온도센서, 피에조 부저 멜로디 연주를 마스터합니다.
+            </p>
+            <a href="/Part02_%EC%95%84%EB%82%A0%EB%A1%9C%EA%B7%B8_%EC%B6%9C%EB%A0%A5%EA%B3%BC_%EA%B8%B0%EC%B4%88_%EC%84%BC%EC%84%9C/032_PWM%EC%9B%90%EB%A6%AC_%EB%88%88%EC%86%8D%EC%9E%84%EA%B9%9C%EB%B9%A1%EC%9E%84%EB%A7%88%EB%B2%95/" class="btn-roadmap-action">
+                센서 정복 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 03 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p3">03. 환경센서 & LCD</span>
+            <h4 class="roadmap-card-title">환경센서 & 캐릭터 LCD</h4>
+            <p class="roadmap-desc">
+                수위/토양수분/빗물 센서, 초음파 거리측정, 온습도(DHT11), 그리고 I2C 1602 캐릭터 LCD 화면 출력까지 실생활 센서를 정복합니다.
+            </p>
+            <a href="/Part03_%EC%83%9D%ED%99%9C_%ED%99%98%EA%B2%BD_%EC%84%BC%EC%84%9C%EC%99%80_%EB%94%94%EC%8A%A4%ED%94%8C%EB%A0%88%EC%9D%B4/058_%EC%88%98%EC%9C%84%EA%B0%90%EC%A7%80%EC%84%BC%EC%84%9C_%EB%AC%BC%EB%86%92%EC%9D%B4%EC%B8%A1%EC%A0%95/" class="btn-roadmap-action">
+                환경 센서 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 04 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p4">04. 디스플레이 & 모터</span>
+            <h4 class="roadmap-card-title">모터 구동 & OLED 디스플레이</h4>
+            <p class="roadmap-desc">
+                서보모터 각도 제어, DC모터와 L298N 드라이버, 스테핑 모터 정밀 제어, 7세그먼트, 8x8 도트매트릭스와 0.96인치 OLED를 완성합니다.
+            </p>
+            <a href="/Part04_%EA%B7%B8%EB%9E%98%ED%94%BD_%EB%94%94%EC%8A%A4%ED%94%8C%EB%A0%88%EC%9D%B4%EC%99%80_%EB%AA%A8%ED%84%B0_%EA%B5%AC%EB%8F%99/074_C%EC%96%B8%EC%96%B4%EB%B0%B0%EC%97%B4_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A4%84%EC%A4%84%EC%9D%B4%EA%B8%B0%EC%B0%A8/" class="btn-roadmap-action">
+                모터 제어 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 05 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p5">05. 스마트 센서 & 방재</span>
+            <h4 class="roadmap-card-title">첨단 스마트 센서 & 방재</h4>
+            <p class="roadmap-desc">
+                정전식 터치센서, 불꽃/가스 센서, 인체감지(PIR), 진동/기울기 센서와 릴레이 모듈을 결합한 스마트 방재 화재경보 시스템을 구축합니다.
+            </p>
+            <a href="/Part05_%EC%B2%A8%EB%8B%A8_%EC%8A%A4%EB%A7%88%ED%8A%B8_%EC%84%BC%EC%84%9C%EC%99%80_%EB%B0%A9%EC%9E%AC_%EC%8B%9C%EC%8A%A4%ED%85%9C/113_%EC%A0%95%EC%A0%84%EC%8B%9D%ED%84%B0%EC%B9%98%EC%84%BC%EC%84%9C_TTP223/" class="btn-roadmap-action">
+                방재 시스템 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 06 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p6">06. 유무선통신 & IoT</span>
+            <h4 class="roadmap-card-title">유무선 통신 & IoT 앱 인벤터</h4>
+            <p class="roadmap-desc">
+                I2C/SPI 다중 통신, 블루투스(HC-06), 스마트폰 앱 인벤터 연동, 와이파이(ESP8266/ESP32)와 클라우드 데이터 송수신을 다룹니다.
+            </p>
+            <a href="/Part06_%EC%9C%A0%EB%AC%B4%EC%84%A0_%ED%86%B5%EC%8B%A0%EA%B3%BC_%EC%95%B1_%EC%9D%B8%EB%B2%A4%ED%84%B0_IoT/123_%EB%8B%A4%EC%A4%91%EC%95%84%EB%91%90%EC%9D%B4%EB%85%B8_%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B0%9C%EC%9A%94/" class="btn-roadmap-action">
+                IoT 무선통신 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 07 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p7">07. 심화부록 & 확장</span>
+            <h4 class="roadmap-card-title">심화 실습 & 확장 모듈 (부록)</h4>
+            <p class="roadmap-desc">
+                외부 고정밀 ADC 컨버터, RTC 실시간 시계 모듈(DS3231), 마이크로SD 카드 로거, EEPROM 데이터 비휘발성 저장 테크닉을 배웁니다.
+            </p>
+            <a href="/Part07_%EB%B6%80%EB%A1%9D_%EC%95%84%EB%91%90%EC%9D%B4%EB%85%B8_%EC%B6%94%EA%B0%80%EC%8B%A4%EC%8A%B5/153_%EC%99%B8%EB%B6%80ADC%EC%BB%A8%EB%B2%84%ED%84%B0_%EC%B4%88%EC%A0%95%EB%B0%80%EA%B3%84%EC%B8%A1/" class="btn-roadmap-action">
+                심화 부록 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 08 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p8">08. 나노 & 패밀리</span>
+            <h4 class="roadmap-card-title">아두이노 패밀리 & 나노</h4>
+            <p class="roadmap-desc">
+                초소형 아두이노 나노(Nano), 프로 미니, 레오나르도(HID 마우스/키보드), 배터리 전원 관리와 저전력 슬립 모드를 정복합니다.
+            </p>
+            <a href="/Part08_%EB%8B%A4%EC%96%91%ED%95%9C_%EC%95%84%EB%91%90%EC%9D%B4%EB%85%B8%EC%99%80_%EB%82%98%EB%85%B8/161_%EC%95%84%EB%91%90%EC%9D%B4%EB%85%B8%EB%82%98%EB%85%B8_%EC%B4%88%EC%86%8C%ED%98%95%EC%9D%98%EB%A7%88%EB%B2%95/" class="btn-roadmap-action">
+                나노 탐구 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 09 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p9">09. 메가 & 대규모</span>
+            <h4 class="roadmap-card-title">아두이노 메가 & 캡스톤 프로젝트</h4>
+            <p class="roadmap-desc">
+                54개 핀 아두이노 메가 2560의 하드웨어 시리얼 4채널을 활용하여 스마트 팜 종합 관제 시스템, 무인 로봇 카 캡스톤을 제작합니다.
+            </p>
+            <a href="/Part09_%EC%95%84%EB%91%90%EC%9D%B4%EB%85%B8_%EB%A9%94%EA%B0%80_%EB%8C%80%EA%B7%9C%EB%AA%A8%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/170_%EC%95%84%EB%91%90%EC%9D%B4%EB%85%B8%EB%A9%94%EA%B0%802560_%EB%8C%80%EA%B7%9C%EB%AA%A8%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%9D%98%EA%B1%B0%EC%9D%B8/" class="btn-roadmap-action">
+                메가 캡스톤 ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Part 10 -->
+    <div class="col-md-6 col-lg-4">
+        <div class="roadmap-card">
+            <span class="roadmap-badge badge-p10">10. 라즈베리파이</span>
+            <h4 class="roadmap-card-title">라즈베리파이 & 하이브리드</h4>
+            <p class="roadmap-desc">
+                리눅스 OS 기반 라즈베리파이 환경 구축, 파이썬 GPIO 제어, 시리얼 통신으로 아두이노와 라즈베리파이를 결합한 하이브리드 IoT를 완성합니다.
+            </p>
+            <a href="/Part10_%EB%9D%BC%EC%A6%88%EB%B2%A0%EB%A6%AC%ED%8C%8C%EC%9D%B4_%EA%B8%B0%EC%B4%88/185_%EB%9D%BC%EC%A6%88%EB%B2%A0%EB%A6%AC%ED%8C%8C%EC%9D%B4%EB%9E%80_%EC%86%8C%ED%98%95%EC%BB%B4%ED%93%A8%ED%84%B0%EC%84%B8%EC%83%81/" class="btn-roadmap-action">
+                하이브리드 ➔
+            </a>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="container my-5">
+    <!-- 캐릭터 소개 섹션 -->
+<div class="card border-0 rounded-4 p-4 p-md-5 mb-5 shadow-sm" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border: 1px solid #e2e8f0 !important;">
+    <div class="row align-items-center mb-4">
+        <div class="col-lg-8">
+            <span class="badge rounded-pill px-3 py-2 fw-bold mb-2" style="background-color: #dcfce7; color: #166534;">Characters</span>
+            <h3 class="fw-bold mb-2" style="color: #1e293b;">🧭 아두이노 모험 4총사를 소개합니다</h3>
+            <p class="text-secondary mb-0">
+                복잡한 전자회로와 코딩을 <strong>이호진 교수님</strong>, 호기심 많은 소녀 <strong>도로시</strong>, 영리한 조수 고양이 <strong>지니</strong>, 반려견 <strong>토토</strong>와 함께 즐겁게 탐험합니다.
+            </p>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+            <a href="/character/" class="btn btn-outline-success rounded-pill px-4 py-2 fw-bold">
+                캐릭터 상세 소개 ➔
+            </a>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <!-- 이호진 교수님 -->
+        <div class="col-md-6 col-lg-3">
+            <a href="/character/" class="text-decoration-none text-reset d-block h-100">
+                <div class="card h-100 border-0 rounded-4 p-3 text-center bg-white shadow-sm transition-hover">
+                    <div class="d-flex justify-content-center align-items-center my-3" style="height: 120px;">
+                        <img src="/img/character_hojin.png" alt="이호진 교수님" style="max-height: 120px; width: auto; object-fit: contain;">
+                    </div>
+                    <h5 class="fw-bold mb-1" style="color: #1e293b;">이호진 교수님</h5>
+                    <p class="small text-muted mb-2"><span class="badge rounded-pill bg-success-subtle text-success px-2 py-1">총괄 멘토</span></p>
+                    <p class="card-text text-secondary small mb-0">
+                        전자회로와 마이크로컨트롤러의 기초 원리부터 친절하게 가르쳐 주시는 멘토 교수님!
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 도로시 -->
+        <div class="col-md-6 col-lg-3">
+            <a href="/character/" class="text-decoration-none text-reset d-block h-100">
+                <div class="card h-100 border-0 rounded-4 p-3 text-center bg-white shadow-sm transition-hover">
+                    <div class="d-flex justify-content-center align-items-center my-3" style="height: 120px;">
+                        <img src="/img/character_dorothy.png" alt="도로시" style="max-height: 120px; width: auto; object-fit: contain;">
+                    </div>
+                    <h5 class="fw-bold mb-1" style="color: #1e293b;">도로시</h5>
+                    <p class="small text-muted mb-2"><span class="badge rounded-pill bg-warning-subtle text-warning-emphasis px-2 py-1">주니어 메이커</span></p>
+                    <p class="card-text text-secondary small mb-0">
+                        "어떻게 불이 켜져요?" 호기심 가득한 눈으로 직접 빵판에 부품을 꽂고 코딩하며 성장하는 9세 소녀!
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 조교 지니 -->
+        <div class="col-md-6 col-lg-3">
+            <a href="/character/" class="text-decoration-none text-reset d-block h-100">
+                <div class="card h-100 border-0 rounded-4 p-3 text-center bg-white shadow-sm transition-hover">
+                    <div class="d-flex justify-content-center align-items-center my-3" style="height: 120px;">
+                        <img src="/img/character_jiny.png" alt="조수 지니" style="max-height: 120px; width: auto; object-fit: contain;">
+                    </div>
+                    <h5 class="fw-bold mb-1" style="color: #1e293b;">조수 지니</h5>
+                    <p class="small text-muted mb-2"><span class="badge rounded-pill bg-info-subtle text-info-emphasis px-2 py-1">연구실 조수</span></p>
+                    <p class="card-text text-secondary small mb-0">
+                        단정한 안경을 쓴 턱시도 고양이! 저항값이 틀리거나 쇼트가 나면 날카롭게 원인을 짚어줍니다.
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 토토 -->
+        <div class="col-md-6 col-lg-3">
+            <a href="/character/" class="text-decoration-none text-reset d-block h-100">
+                <div class="card h-100 border-0 rounded-4 p-3 text-center bg-white shadow-sm transition-hover">
+                    <div class="d-flex justify-content-center align-items-center my-3" style="height: 120px;">
+                        <img src="/img/character_toto.png" alt="토토" style="max-height: 120px; width: auto; object-fit: contain;">
+                    </div>
+                    <h5 class="fw-bold mb-1" style="color: #1e293b;">토토</h5>
+                    <p class="small text-muted mb-2"><span class="badge rounded-pill bg-primary-subtle text-primary-emphasis px-2 py-1">응원 대장</span></p>
+                    <p class="card-text text-secondary small mb-0">
+                        스카이블루 반다나를 두른 도로시의 반려견! 업로드가 성공하면 꼬리를 흔들며 신나게 응원합니다.
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+    <div class="container mt-4">
+        <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+            crossorigin="anonymous"></script>
+        <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86"
+            data-ad-client="ca-pub-3321560028329475" data-ad-slot="6043271504"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</div>
+
+  <footer class="bd-footer py-4 py-md-5 mt-5 bg-light border-top">
+  <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+    <div class="row">
+      <div class="col-lg-4 mb-3">
+        <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="/" aria-label="Arduino Master">
+          <span class="fs-4 me-2">⚡</span>
+          <span class="fs-5 fw-bold">아두이노 임베디드 & IoT 마스터 클래스</span>
+        </a>
+        <ul class="list-unstyled small">
+          <li class="mb-2">이호진 교수님, 도로시, 조교 지니, 토토와 함께 떠나는 아두이노 & 피지컬 컴퓨팅 완전 정복 대장정!</li>
+          <li class="mb-2">기초 하드웨어 제어부터 고급 센서, 모터, 통신, 메가 프로젝트, 라즈베리파이까지 193강 풀코스.</li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3 offset-lg-1 mb-3">
+        <h5>학습 바로가기</h5>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="/Part01_아두이노_우노와_기초/000_강의소개_아두이노모험의시작/" class="text-decoration-none">000강 강의 소개 및 오리엔테이션</a></li>
+          <li class="mb-2"><a href="/Part02_아날로그_출력과_기초_센서/032_PWM원리_눈속임깜빡임마법/" class="text-decoration-none">PWM & 아날로그 제어</a></li>
+          <li class="mb-2"><a href="/Part04_그래픽_디스플레이와_모터_구동/074_C언어배열_데이터줄줄이기차/" class="text-decoration-none">모터 제어 & 그래픽 디스플레이</a></li>
+          <li class="mb-2"><a href="/Part06_유무선_통신과_앱_인벤터_IoT/123_다중아두이노_네트워크개요/" class="text-decoration-none">유무선 통신 & IoT</a></li>
+          <li class="mb-2"><a href="/curriculum/" class="text-decoration-none">14주차 전체 커리큘럼</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3 mb-3">
+        <h5>관련 링크</h5>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="https://www.arduino.cc/" target="_blank" rel="noopener" class="text-decoration-none">Arduino 공식 웹사이트</a></li>
+          <li class="mb-2"><a href="https://docs.arduino.cc/" target="_blank" rel="noopener" class="text-decoration-none">Arduino 공식 문서 및 레퍼런스</a></li>
+          <li class="mb-2"><a href="https://www.raspberrypi.com/" target="_blank" rel="noopener" class="text-decoration-none">Raspberry Pi 공식 웹사이트</a></li>
+          <li class="mb-2"><a href="https://github.com" target="_blank" rel="noopener" class="text-decoration-none">GitHub 저장소</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    window.addEventListener('load', async function () {
+      mermaid.initialize({ startOnLoad: false });
+
+      const mermaidCodes = document.querySelectorAll('pre code.language-mermaid');
+      const mermaidDivs = [];
+
+      mermaidCodes.forEach(codeBlock => {
+        const mermaidDefinition = codeBlock.textContent.trim();
+        const container = codeBlock.closest('div.highlighter-rouge');
+
+        const mermaidDiv = document.createElement('div');
+        mermaidDiv.className = 'mermaid';
+        mermaidDiv.textContent = mermaidDefinition;
+
+        if (container) {
+          container.replaceWith(mermaidDiv);
+        } else {
+          const pre = codeBlock.parentElement;
+          if (pre) pre.replaceWith(mermaidDiv);
+        }
+        mermaidDivs.push(mermaidDiv);
+      });
+
+      if (mermaidDivs.length > 0) {
+        await mermaid.run({ nodes: mermaidDivs });
+      }
+    });
+  </script>
+  <script src="/assets/js/toc.js"></script>
+
+</body>
+
+</html>

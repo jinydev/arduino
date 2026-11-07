@@ -1,0 +1,1218 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>130_SPI통신원리_초고속전이중 ⚡🚄 | 지니와 도로시가 함께하는 아두이노와 전자 세상 탐험</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="130_SPI통신원리_초고속전이중 ⚡🚄" />
+<meta name="author" content="Hojin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="이호진 교수님과 함께하는 아두이노 193강 마스터 클래스 (우노, 나노, 메가 &amp; 라즈베리파이)" />
+<meta name="twitter:description" property="og:description" content="이호진 교수님과 함께하는 아두이노 193강 마스터 클래스 (우노, 나노, 메가 &amp; 라즈베리파이)" />
+<link rel="canonical" href="https://arduino.jiny.dev/Part06_%EC%9C%A0%EB%AC%B4%EC%84%A0_%ED%86%B5%EC%8B%A0%EA%B3%BC_%EC%95%B1_%EC%9D%B8%EB%B2%A4%ED%84%B0_IoT/130_SPI%ED%86%B5%EC%8B%A0%EC%9B%90%EB%A6%AC_%EC%B4%88%EA%B3%A0%EC%86%8D%EC%A0%84%EC%9D%B4%EC%A4%91/" />
+<meta property="og:url" content="https://arduino.jiny.dev/Part06_%EC%9C%A0%EB%AC%B4%EC%84%A0_%ED%86%B5%EC%8B%A0%EA%B3%BC_%EC%95%B1_%EC%9D%B8%EB%B2%A4%ED%84%B0_IoT/130_SPI%ED%86%B5%EC%8B%A0%EC%9B%90%EB%A6%AC_%EC%B4%88%EA%B3%A0%EC%86%8D%EC%A0%84%EC%9D%B4%EC%A4%91/" />
+<meta property="og:site_name" content="지니와 도로시가 함께하는 아두이노와 전자 세상 탐험" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="130_SPI통신원리_초고속전이중 ⚡🚄" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Hojin"},"description":"이호진 교수님과 함께하는 아두이노 193강 마스터 클래스 (우노, 나노, 메가 &amp; 라즈베리파이)","headline":"130_SPI통신원리_초고속전이중 ⚡🚄","url":"https://arduino.jiny.dev/Part06_%EC%9C%A0%EB%AC%B4%EC%84%A0_%ED%86%B5%EC%8B%A0%EA%B3%BC_%EC%95%B1_%EC%9D%B8%EB%B2%A4%ED%84%B0_IoT/130_SPI%ED%86%B5%EC%8B%A0%EC%9B%90%EB%A6%AC_%EC%B4%88%EA%B3%A0%EC%86%8D%EC%A0%84%EC%9D%B4%EC%A4%91/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/css/docs.css?v=1794032219" rel="stylesheet" />
+  <link href="/assets/css/highlight.css" rel="stylesheet" />
+
+  <style>
+    /* Table Styling: 회색 실선 테두리 및 가독성 최적화 */
+    .bd-content table {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      margin-top: 1.5rem !important;
+      margin-bottom: 2rem !important;
+      font-size: 0.95rem !important;
+      border: 1px solid #cbd5e1 !important;
+      border-spacing: 0 !important;
+      background-color: #ffffff !important;
+    }
+
+    .bd-content table thead th {
+      background-color: #f1f5f9 !important;
+      color: #1e293b !important;
+      font-weight: 700 !important;
+      border: 1px solid #cbd5e1 !important;
+      padding: 0.75rem 1rem !important;
+      vertical-align: middle !important;
+      text-align: left !important;
+    }
+
+    .bd-content table tbody td {
+      border: 1px solid #cbd5e1 !important;
+      padding: 0.75rem 1rem !important;
+      color: #334155 !important;
+      vertical-align: top !important;
+      background-color: #ffffff !important;
+    }
+
+    .bd-content table tbody tr:nth-of-type(even) td {
+      background-color: #f8fafc !important;
+    }
+
+    .bd-content table tbody tr:hover td {
+      background-color: #f1f5f9 !important;
+    }
+
+    @media (max-width: 768px) {
+      .bd-content table {
+        display: block !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+    }
+  </style>
+
+  <style>
+    blockquote {
+      border-left: solid 5px #dee2e6;
+      padding: 5px 10px;
+      background-color: #f8f9fa;
+    }
+  </style>
+
+  <style>
+    h1 a {
+      text-decoration: none;
+    }
+
+    h2 a {
+      text-decoration: none;
+    }
+
+    h3 a {
+      text-decoration: none;
+    }
+
+    h4 a {
+      text-decoration: none;
+    }
+
+    h5 a {
+      text-decoration: none;
+    }
+
+    h6 a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: top
+    }
+
+    strong a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 스크롤바 커스텀 */
+    /* 임의의 영역 생성 */
+    .scrollBar {}
+
+    /* 아래의 모든 코드는 영역::코드로 사용 */
+    .scrollBar::-webkit-scrollbar {
+      width: 7px;
+      /* 스크롤바의 너비 */
+    }
+
+    .scrollBar::-webkit-scrollbar-thumb {
+      height: 30%;
+      /* 스크롤바의 길이 */
+      background: #cccccc;
+      /* 스크롤바의 색상 */
+
+      border-radius: 5px;
+    }
+
+    .scrollBar::-webkit-scrollbar-track {
+      background: rgba(33, 122, 244, .1);
+      /*스크롤바 뒷 배경 색상*/
+    }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-R4VBPCT3CR');
+  </script>
+
+  <!-- MathJax for LaTeX Rendering -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+</head>
+
+<body>
+  <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+    <nav class="container bd-gutter flex-wrap flex-lg-nowrap position-relative" aria-label="Main navigation">
+
+      <!-- Mobile: Left Toggle (Browse) -->
+      <div class="bd-navbar-toggle d-lg-none">
+        <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar"
+          aria-controls="bdSidebar" aria-label="Toggle docs navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi" fill="currentColor"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
+            </path>
+          </svg>
+          <span class="d-none fs-6 pe-1">Browse</span>
+        </button>
+      </div>
+
+      <!-- Brand: Desktop (Static), Mobile (Absolute Center) -->
+      <a class="navbar-brand p-0 me-0 me-lg-2 ms-lg-0 d-none d-lg-inline-block" href="/" aria-label="jinydev">
+        <svg width="32" height="26" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.2746 5.33377C25.8486 7.33981 25.1183 11.1792 24.3961 13.0177C24.4028 13.0199 24.4094 13.0221 24.4161 13.0243L24.4013 13.0248L22.649 12.9082C22.649 12.9053 22.6488 12.9013 22.649 12.8993C22.9902 8.93373 22.5975 7.34575 22.2147 7.07677C17.6316 10.3896 13.5379 9.33658 12.2725 9.01111C11.928 8.9225 11.7932 8.88781 11.9152 9.00988C12.2872 9.38185 13.1336 9.82821 13.7371 10.1465H13.7372L13.7376 10.1467C13.8743 10.2188 13.9985 10.2843 14.1019 10.3409C9.12673 10.3984 7.12659 8.00279 6.53855 7.29846C6.47859 7.22664 6.4333 7.1724 6.40105 7.14015C6.11408 6.85318 4.49961 5.87252 3.99256 7.74227C3.50142 9.55335 3.81246 11.6775 3.97665 12.7988C3.99089 12.896 3.99257 12.8981 3.99257 12.9298L2.37635 13.0248L2.37213 13.0247C0.223493 8.05534 1.83854 5.26971 3.29536 4.2246C3.29536 1.78444 6.27428 -0.592359 10.0455 0.263262C14.8768 1.64043 16.3468 1.18409 18.0759 0.647278C18.774 0.430562 19.5143 0.200726 20.5351 0.073124C25.2219 -0.512739 26.7993 2.56612 27 4.16122C26.2141 3.70487 24.8556 4.73165 24.2746 5.33377ZM12.3374 1.5872C11.1225 1.16466 7.99257 0.717209 6.3478 2.41116C5.98397 2.78587 5.55554 3.48864 5.55554 3.48864C5.55554 3.48864 4.82665 4.81961 4.25622 4.24919C3.68579 3.67878 5.0168 1.96749 6.06259 1.46044C7.10838 0.953388 9.70703 0.0660505 12.3374 1.5872Z"
+            fill="currentColor" />
+          <path
+            d="M10.078 13.5002H3.10601C2.2309 13.5002 1.52148 14.2097 1.52148 15.0848V18.3172C1.52148 19.1923 2.2309 19.9018 3.10601 19.9018H10.078C10.9531 19.9018 11.6625 19.1923 11.6625 18.3172V15.0848C11.6625 14.2097 10.9531 13.5002 10.078 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M0.823513 14.6094H0.379847C0.187322 14.6094 0.03125 14.7654 0.03125 14.958V15.9721C0.03125 16.1646 0.187322 16.3207 0.379847 16.3207H0.823513C1.01604 16.3207 1.17211 16.1646 1.17211 15.9721V14.958C1.17211 14.7654 1.01604 14.6094 0.823513 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M16.7326 13.5002H23.7045C24.5796 13.5002 25.2891 14.2097 25.2891 15.0848V18.3172C25.2891 19.1923 24.5796 19.9018 23.7045 19.9018H16.7326C15.8575 19.9018 15.1481 19.1923 15.1481 18.3172V15.0848C15.1481 14.2097 15.8575 13.5002 16.7326 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M25.9861 14.6094H26.4297C26.6222 14.6094 26.7783 14.7654 26.7783 14.958V15.9721C26.7783 16.1646 26.6222 16.3207 26.4297 16.3207H25.9861C25.7935 16.3207 25.6375 16.1646 25.6375 15.9721V14.958C25.6375 14.7654 25.7935 14.6094 25.9861 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M12.2954 15.5601H14.5137C14.7062 15.5601 14.8623 15.7161 14.8623 15.9087V16.9228C14.8623 17.1153 14.7062 17.2713 14.5137 17.2713H12.2954C12.1028 17.2713 11.9468 17.1153 11.9468 16.9228V15.9087C11.9468 15.7161 12.1028 15.5601 12.2954 15.5601Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M9.93343 16.3937C9.93343 16.7087 9.76317 16.9641 9.55314 16.9641C9.34311 16.9641 9.17285 16.7087 9.17285 16.3937C9.17285 16.0786 9.34311 15.8232 9.55314 15.8232C9.76317 15.8232 9.93343 16.0786 9.93343 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M16.9688 16.3937C16.9688 16.7087 17.139 16.9641 17.3491 16.9641C17.5591 16.9641 17.7293 16.7087 17.7293 16.3937C17.7293 16.0786 17.5591 15.8232 17.3491 15.8232C17.139 15.8232 16.9688 16.0786 16.9688 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M14.2758 20.1016C13.642 20.6086 12.7863 20.3551 12.5645 20.1016C12.6278 20.4185 12.8687 20.8622 13.4518 20.8622C14.0349 20.8622 14.2441 20.3551 14.2758 20.1016Z"
+            fill="currentColor" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.1312 22.411C12.1575 22.2914 12.2759 22.2157 12.3956 22.2421L14.6347 22.735C14.7544 22.7614 14.83 22.8797 14.8036 22.9994C14.7773 23.119 14.659 23.1947 14.5393 23.1683L12.3002 22.6753C12.1805 22.649 12.1049 22.5307 12.1312 22.411Z"
+            fill="currentColor" />
+          <path
+            d="M13.4203 27.6754C9.00897 27.7261 5.77228 23.6613 4.70536 21.6225C4.54691 21.3197 4.42016 21.2739 4.32509 21.3373C4.17297 21.4387 4.28282 21.6437 4.32507 21.7493C4.85747 22.9916 5.58213 24.0416 5.87791 24.4113C4.83846 26.1353 4.49409 27.855 4.45183 28.4994C6.1758 26.8008 7.91668 26.8832 8.57162 27.1367C13.7055 29.7987 16.5577 27.929 18.1739 27.1367C19.4669 26.5029 21.4803 27.7388 22.3254 28.436C22.224 26.8642 21.3747 25.1402 20.9627 24.4747C21.6282 23.5873 22.1669 22.5099 22.4522 21.9711C22.6803 21.5401 22.6106 21.369 22.5472 21.3373C22.3951 21.2613 22.2092 21.4958 22.1353 21.6225C21.6599 22.4148 18.9345 27.6121 13.4203 27.6754Z"
+            fill="currentColor" />
+        </svg>
+      </a>
+      <a class="navbar-brand p-0 me-0 position-absolute top-50 start-50 translate-middle d-lg-none" href="/"
+        aria-label="jinydev">
+        <svg width="100" height="26" viewBox="0 0 112 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.2746 5.33377C25.8486 7.33981 25.1183 11.1792 24.3961 13.0177C24.4028 13.0199 24.4094 13.0221 24.4161 13.0243L24.4013 13.0248L22.649 12.9082C22.649 12.9053 22.6488 12.9013 22.649 12.8993C22.9902 8.93373 22.5975 7.34575 22.2147 7.07677C17.6316 10.3896 13.5379 9.33658 12.2725 9.01111C11.928 8.9225 11.7932 8.88781 11.9152 9.00988C12.2872 9.38185 13.1336 9.82821 13.7371 10.1465H13.7372L13.7376 10.1467C13.8743 10.2188 13.9985 10.2843 14.1019 10.3409C9.12673 10.3984 7.12659 8.00279 6.53855 7.29846C6.47859 7.22664 6.4333 7.1724 6.40105 7.14015C6.11408 6.85318 4.49961 5.87252 3.99256 7.74227C3.50142 9.55335 3.81246 11.6775 3.97665 12.7988C3.99089 12.896 3.99257 12.8981 3.99257 12.9298L2.37635 13.0248L2.37213 13.0247C0.223493 8.05534 1.83854 5.26971 3.29536 4.2246C3.29536 1.78444 6.27428 -0.592359 10.0455 0.263262C14.8768 1.64043 16.3468 1.18409 18.0759 0.647278C18.774 0.430562 19.5143 0.200726 20.5351 0.073124C25.2219 -0.512739 26.7993 2.56612 27 4.16122C26.2141 3.70487 24.8556 4.73165 24.2746 5.33377ZM12.3374 1.5872C11.1225 1.16466 7.99257 0.717209 6.3478 2.41116C5.98397 2.78587 5.55554 3.48864 5.55554 3.48864C5.55554 3.48864 4.82665 4.81961 4.25622 4.24919C3.68579 3.67878 5.0168 1.96749 6.06259 1.46044C7.10838 0.953388 9.70703 0.0660505 12.3374 1.5872Z"
+            fill="currentColor" />
+          <path
+            d="M10.078 13.5002H3.10601C2.2309 13.5002 1.52148 14.2097 1.52148 15.0848V18.3172C1.52148 19.1923 2.2309 19.9018 3.10601 19.9018H10.078C10.9531 19.9018 11.6625 19.1923 11.6625 18.3172V15.0848C11.6625 14.2097 10.9531 13.5002 10.078 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M0.823513 14.6094H0.379847C0.187322 14.6094 0.03125 14.7654 0.03125 14.958V15.9721C0.03125 16.1646 0.187322 16.3207 0.379847 16.3207H0.823513C1.01604 16.3207 1.17211 16.1646 1.17211 15.9721V14.958C1.17211 14.7654 1.01604 14.6094 0.823513 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M16.7326 13.5002H23.7045C24.5796 13.5002 25.2891 14.2097 25.2891 15.0848V18.3172C25.2891 19.1923 24.5796 19.9018 23.7045 19.9018H16.7326C15.8575 19.9018 15.1481 19.1923 15.1481 18.3172V15.0848C15.1481 14.2097 15.8575 13.5002 16.7326 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M25.9861 14.6094H26.4297C26.6222 14.6094 26.7783 14.7654 26.7783 14.958V15.9721C26.7783 16.1646 26.6222 16.3207 26.4297 16.3207H25.9861C25.7935 16.3207 25.6375 16.1646 25.6375 15.9721V14.958C25.6375 14.7654 25.7935 14.6094 25.9861 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M12.2954 15.5601H14.5137C14.7062 15.5601 14.8623 15.7161 14.8623 15.9087V16.9228C14.8623 17.1153 14.7062 17.2713 14.5137 17.2713H12.2954C12.1028 17.2713 11.9468 17.1153 11.9468 16.9228V15.9087C11.9468 15.7161 12.1028 15.5601 12.2954 15.5601Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M9.93343 16.3937C9.93343 16.7087 9.76317 16.9641 9.55314 16.9641C9.34311 16.9641 9.17285 16.7087 9.17285 16.3937C9.17285 16.0786 9.34311 15.8232 9.55314 15.8232C9.76317 15.8232 9.93343 16.0786 9.93343 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M16.9688 16.3937C16.9688 16.7087 17.139 16.9641 17.3491 16.9641C17.5591 16.9641 17.7293 16.7087 17.7293 16.3937C17.7293 16.0786 17.5591 15.8232 17.3491 15.8232C17.139 15.8232 16.9688 16.0786 16.9688 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M14.2758 20.1016C13.642 20.6086 12.7863 20.3551 12.5645 20.1016C12.6278 20.4185 12.8687 20.8622 13.4518 20.8622C14.0349 20.8622 14.2441 20.3551 14.2758 20.1016Z"
+            fill="currentColor" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.1312 22.411C12.1575 22.2914 12.2759 22.2157 12.3956 22.2421L14.6347 22.735C14.7544 22.7614 14.83 22.8797 14.8036 22.9994C14.7773 23.119 14.659 23.1947 14.5393 23.1683L12.3002 22.6753C12.1805 22.649 12.1049 22.5307 12.1312 22.411Z"
+            fill="currentColor" />
+          <path
+            d="M13.4203 27.6754C9.00897 27.7261 5.77228 23.6613 4.70536 21.6225C4.54691 21.3197 4.42016 21.2739 4.32509 21.3373C4.17297 21.4387 4.28282 21.6437 4.32507 21.7493C4.85747 22.9916 5.58213 24.0416 5.87791 24.4113C4.83846 26.1353 4.49409 27.855 4.45183 28.4994C6.1758 26.8008 7.91668 26.8832 8.57162 27.1367C13.7055 29.7987 16.5577 27.929 18.1739 27.1367C19.4669 26.5029 21.4803 27.7388 22.3254 28.436C22.224 26.8642 21.3747 25.1402 20.9627 24.4747C21.6282 23.5873 22.1669 22.5099 22.4522 21.9711C22.6803 21.5401 22.6106 21.369 22.5472 21.3373C22.3951 21.2613 22.2092 21.4958 22.1353 21.6225C21.6599 22.4148 18.9345 27.6121 13.4203 27.6754Z"
+            fill="currentColor" />
+          <text x="32" y="21" font-family="Arial, sans-serif" font-weight="bold" font-size="22"
+            fill="currentColor">Jiny</text>
+        </svg>
+      </a>
+
+      <!-- Mobile: Right Toggle (Menu) -->
+      <div class="d-flex d-lg-none ms-auto">
+        <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar"
+          aria-controls="bdNavbar" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid"
+            viewBox="0 0 16 16">
+            <path
+              d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- OffCanvas -->
+      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar"
+        aria-labelledby="bdNavbarOffcanvasLabel" data-bs-scroll="true">
+        <!-- OffCanver Header -->
+        <div class="offcanvas-header px-4 pb-0">
+          <h5 class="offcanvas-title text-white" id="bdNavbarOffcanvasLabel">Jiny</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"
+            data-bs-target="#bdNavbar">
+          </button>
+        </div>
+
+        <!-- OffCanver Body -->
+        <div class="offcanvas-body p-4 pt-0 p-lg-0">
+          <hr class="d-lg-none text-white-50">
+
+          <ul class="navbar-nav flex-column flex-lg-row bd-navbar-nav">
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/character/">소개하기</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part01_아두이노_우노와_기초/000_강의소개_아두이노모험의시작/">우노&기초</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part02_아날로그_출력과_기초_센서/032_PWM원리_눈속임깜빡임마법/">PWM&센서</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part03_생활_환경_센서와_디스플레이/058_수위감지센서_물높이측정/">환경센서&LCD</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part04_그래픽_디스플레이와_모터_구동/074_C언어배열_데이터줄줄이기차/">모터&OLED</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part05_첨단_스마트_센서와_방재_시스템/113_정전식터치센서_TTP223/">스마트방재</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part06_유무선_통신과_앱_인벤터_IoT/123_다중아두이노_네트워크개요/">통신&IoT</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part07_부록_아두이노_추가실습/153_외부ADC컨버터_초정밀계측/">추가실습</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part08_다양한_아두이노와_나노/161_다양한아두이노보드형제들/">나노&패밀리</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part09_아두이노_메가_대규모프로젝트/170_아두이노메가_소개와_핀부자MCU/">메가프로젝트</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2 "
+                href="/Part10_라즈베리파이_기초/185_라즈베리파이_소개와_SBC하드웨어스펙/">라즈베리파이</a>
+            </li>
+            
+          </ul>
+
+          <hr class="d-lg-none text-white-50">
+
+          <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+            <li class="nav-item col-6 col-lg-auto">
+              <a class="nav-link py-2 px-0 px-lg-2" href="https://github.com/jinydev" target="_blank"
+                rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                  viewBox="0 0 512 499.36" role="img">
+                  <title>GitHub</title>
+                  <path fill="currentColor" fill-rule="evenodd"
+                    d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z">
+                  </path>
+                </svg>
+                <small class="d-lg-none ms-2">GitHub</small>
+              </a>
+            </li>
+
+            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+              <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+              <hr class="d-lg-none my-2 text-white-50">
+            </li>
+
+            <li class="nav-item col-6 col-lg-auto">
+              <a class="nav-link py-2 px-0 px-lg-2" href="https://jiny.dev" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                  viewBox="0 0 16 16" role="img">
+                  <title>Home</title>
+                  <path fill="currentColor"
+                    d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+                </svg>
+                <small class="d-lg-none ms-2">Home</small>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container bd-gutter mt-3 my-md-4 bd-layout">
+    <aside class="bd-sidebar scrollBar">
+        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar"
+            aria-labelledby="bdSidebarOffcanvasLabel">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">학습목차</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                    data-bs-target="#bdSidebar"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <!-- 네비게이션 -->
+                <style>
+.bd-sidebar-link {
+  color: #64748b;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0 !important;
+  font-size: 0.92rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.15s ease-in-out;
+  line-height: 1.4;
+}
+.bd-sidebar-link:hover {
+  color: #0f172a;
+  background-color: #f1f5f9;
+  border-radius: 0 !important;
+}
+.bd-sidebar-link.is-active {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+  background-color: #f8fafc !important;
+  border-left: 3px solid #0f172a !important;
+  border-radius: 0 !important;
+  padding-left: calc(0.75rem - 3px);
+}
+</style>
+
+<nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
+  <ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2">
+    <li class="bd-links-group py-2">
+      
+      
+
+      
+      
+      
+      
+
+      
+
+      <strong class="bd-links-heading d-flex w-100 align-items-center fw-bold text-dark mb-3 pb-2 border-bottom" style="font-size: 1.05rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-compass me-2 flex-shrink-0 text-primary" viewBox="0 0 16 16">
+          <path d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+          <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.94 2.83 2.82-4.95zm1.06.56a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+        </svg>
+        <span class="text-truncate">Part 06. 유무선 통신과 앱 인벤터 IoT</span>
+      </strong>
+
+      
+        <!-- Section Items List for Parts -->
+        
+          
+            <div class="mb-3">
+              <ul class="list-unstyled fw-normal pb-2 small ps-1">
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/123_다중아두이노_네트워크개요/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">123_다중아두이노_네트워크개요 🌐🤝</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/124_시리얼포트의_하드웨어비밀/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">124_시리얼포트의_하드웨어비밀 🔌🕵️</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/125_두대의아두이노_시리얼연동/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">125_두대의아두이노_시리얼연동 💬🤝</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/126_SoftwareSerial_가상통신핀/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">126_SoftwareSerial_가상통신핀 🎛️📻</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/127_I2C통신_마스터슬레이브원리/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">127_I2C통신_마스터슬레이브원리 🚌🤝</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/128_I2C두대연동_데이터패킷/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">128_I2C두대연동_데이터패킷 📦🚚</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/129_I2C세대연동_1대N네트워크/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">129_I2C세대연동_1대N네트워크 🌐🕸️</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/130_SPI통신원리_초고속전이중/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">130_SPI통신원리_초고속전이중 ⚡🚄</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/131_SPI_싱글슬레이브연동/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">131_SPI_싱글슬레이브연동 🤝🔌</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/132_SPI_멀티슬레이브연동/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">132_SPI_멀티슬레이브연동 🌲🔌</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/133_블루투스란_무선근거리통신/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">133_블루투스란_무선근거리통신 📶🔵</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/134_HC06_블루투스모듈연결/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">134_HC06_블루투스모듈연결 📱🔌</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/135_AT명령어_블루투스환경설정/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">135_AT명령어_블루투스환경설정 ⚙️🪄</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/136_블루투스페어링_무선짝꿍/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">136_블루투스페어링_무선짝꿍 🤝📲</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/137_스마트폰시리얼앱_무선대화/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">137_스마트폰시리얼앱_무선대화 💬📱</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/138_블루투스스위치_스마트폰LED제어/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">138_블루투스스위치_스마트폰LED제어 💡📱</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/139_스마트폰앱이란_소프트웨어생태계/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">139_스마트폰앱이란_소프트웨어생태계 📱🌍</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/140_앱인벤터_블록코딩마법소개/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">140_앱인벤터_블록코딩마법소개 🧩🪄</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/141_AI2컴패니언_실시간스마트폰연동/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">141_AI2컴패니언_실시간스마트폰연동 📲🤝</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/142_앱인벤터_디자이너인터페이스/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">142_앱인벤터_디자이너인터페이스 🎨🛠️</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/143_실습UI_화면레이아웃설계/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">143_실습UI_화면레이아웃설계 📐📱</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/144_실습UI_버튼과블루투스컴포넌트/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">144_실습UI_버튼과블루투스컴포넌트 🔘🔵</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/145_블록에디터_이벤트구동프로그래밍/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">145_블록에디터_이벤트구동프로그래밍 🧩💻</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/146_블루투스연결_블록조립하기/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">146_블루투스연결_블록조립하기 🔗📱</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/147_LED제어_무선텍스트전송블록/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">147_LED제어_무선텍스트전송블록 💡📲</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/148_스마트폰앱_APK빌드및실행/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">148_스마트폰앱_APK빌드및실행 📦🚀</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/149_ESP32_WiFi_웹서버와_원격스마트홈제어/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">149_ESP32_WiFi_웹서버와_원격스마트홈제어 🌐📱</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/150_MQTT_경량IoT메시징_발행구독과_초고속통신/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">150_MQTT_경량IoT메시징_발행구독과_초고속통신 📮⚡</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/151_IoT클라우드_ThingSpeak_실시간센서대시보드/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">151_IoT클라우드_ThingSpeak_실시간센서대시보드 ☁️📈</span>
+                    </a>
+                  </li>
+                
+                  
+                  
+                  <li class="py-1">
+                    <a href="/Part06_유무선_통신과_앱_인벤터_IoT/152_스마트폰_텔레그램봇_침입화재_실시간푸시알림/"
+                       class="bd-sidebar-link "
+                       >
+                      <span class="text-truncate">152_스마트폰_텔레그램봇_침입화재_실시간푸시알림 🚨💬</span>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+        
+      
+    </li>
+  </ul>
+</nav>
+
+            </div>
+        </div>
+    </aside>
+
+    <main class="bd-main order-1">
+        <nav aria-label="breadcrumb" class="mt-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item"><a href="/Part06_%EC%9C%A0%EB%AC%B4%EC%84%A0_%ED%86%B5%EC%8B%A0%EA%B3%BC_%EC%95%B1_%EC%9D%B8%EB%B2%A4%ED%84%B0_IoT/">Part06 유무선 통신과 앱 인벤터 iot</a></li>
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item active" aria-current="page">130_SPI통신원리_초고속전이중 ⚡🚄</li>
+        
+        
+        
+    </ol>
+</nav>
+
+        <div class="bd-content ps-lg-4">
+            <h1 id="130_spi통신원리_초고속전이중-">130_SPI통신원리_초고속전이중 ⚡🚄</h1>
+
+<p><img src="./img/dorothy_spi_orchestra.jpg" alt="초고속 전이중 SPI 통신" /></p>
+
+<p><strong>도로시와 지니가 함께하는 SPI(Serial Peripheral Interface) 탐험</strong></p>
+
+<ul>
+  <li>👧 <strong>도로시</strong>: “지니야! I2C보다 훨씬 빠르고 데이터를 보내는 동시에 받을 수 있는 통신도 있어?”</li>
+  <li>🐱 <strong>지니</strong>: “그럼! 모토로라에서 고안한 <strong>SPI(Serial Peripheral Interface) 통신</strong>은 송수신이 동시에 일어나는 <strong>동기식 전이중(Full Duplex) 초고속 통신</strong>이란다!”</li>
+  <li>
+    <p>🐶 <strong>토토</strong>: “바우! 지휘자의 지휘봉(SS)이 가리키는 악기만 소리를 내는 오케스트라 같다 멍!”</p>
+  </li>
+  <li>🖥️ <strong>강의 슬라이드</strong>: <a href="./slides.md">slides.md</a></li>
+</ul>
+
+<hr />
+
+<h2 id="1-spi-통신이란-무엇일까요">1. SPI 통신이란 무엇일까요?</h2>
+
+<p><img src="./img/image_4_2.png" alt="SPI 통신 개요" /></p>
+
+<h3 id="-고속-주변장치를-위한-시리얼-버스-아키텍처">🚀 고속 주변장치를 위한 시리얼 버스 아키텍처</h3>
+
+<p>SPI 통신은 마이크로컨트롤러와 외장 메모리(SD 카드), 고해상도 TFT LCD, RF 무선 모듈, 고정밀 센서 간에 수 MHz에서 수십 MHz의 압도적인 속도로 데이터를 교환하는 표준 인터페이스입니다.</p>
+
+<ul>
+  <li><strong>동기식 통신 (Synchronous)</strong>:
+    <ul>
+      <li>마스터가 생성하는 공통 클록(SCK) 신호의 엣지(Edge)에 맞추어 비트를 1비트씩 주고받으므로 속도 오차가 발생하지 않습니다.</li>
+    </ul>
+  </li>
+  <li><strong>전이중 통신 (Full Duplex)</strong>:
+    <ul>
+      <li>송신 라인과 수신 라인이 물리적으로 분리되어 있어, 데이터를 마스터가 슬레이브로 쏘는 바로 그 순간에 슬레이브도 마스터로 응답 데이터를 밀어 넣습니다.</li>
+    </ul>
+  </li>
+  <li><strong>마스터-슬레이브 구조 (Master-Slave)</strong>:
+    <ul>
+      <li>1개의 마스터(Master)가 전체 통신 클록과 슬레이브 선택 신호를 완벽하게 통제합니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="2-spi-통신의-핵심-4개-전선">2. SPI 통신의 핵심 4개 전선</h2>
+
+<p><img src="./img/image_4_3.png" alt="SPI 4개 전선 구조" /></p>
+
+<h3 id="-오케스트라를-움직이는-4개의-신호선">🎼 오케스트라를 움직이는 4개의 신호선</h3>
+
+<p>SPI 통신을 구축하기 위해서는 4개의 물리적 신호선과 1개의 공통 접지선(GND)이 필요합니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">신호선 약칭</th>
+      <th style="text-align: left">정식 영문 명칭</th>
+      <th style="text-align: center">아두이노 우노 핀</th>
+      <th style="text-align: center">신호 방향</th>
+      <th style="text-align: left">핵심 역할</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>MOSI</strong></td>
+      <td style="text-align: left">Master Out Slave In</td>
+      <td style="text-align: center"><strong>D11</strong></td>
+      <td style="text-align: center">Master ➡️ Slave</td>
+      <td style="text-align: left">마스터가 슬레이브에게 보내는 직렬 데이터 출력선</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>MISO</strong></td>
+      <td style="text-align: left">Master In Slave Out</td>
+      <td style="text-align: center"><strong>D12</strong></td>
+      <td style="text-align: center">Slave ➡️ Master</td>
+      <td style="text-align: left">슬레이브가 마스터에게 보내는 직렬 데이터 응답선</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SCK</strong></td>
+      <td style="text-align: left">Serial Clock</td>
+      <td style="text-align: center"><strong>D13</strong></td>
+      <td style="text-align: center">Master ➡️ Slave</td>
+      <td style="text-align: left">데이터 비트 전송 박자를 맞추는 마스터 동기 클록선</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SS</strong> (CS)</td>
+      <td style="text-align: left">Slave Select / Chip Select</td>
+      <td style="text-align: center"><strong>D10</strong> 등 임의 핀</td>
+      <td style="text-align: center">Master ➡️ Slave</td>
+      <td style="text-align: left">통신할 특정 슬레이브를 깨우는 활성화 선택선 (Active-LOW)</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="3-우노uno-vs-메가mega-하드웨어-spi-핀-매핑">3. 우노(UNO) vs 메가(Mega) 하드웨어 SPI 핀 매핑</h2>
+
+<p><img src="../../img/arduino_logo.png" alt="아두이노 SPI 핀아웃" /></p>
+
+<h3 id="-보드별-하드웨어-spi-전용-핀-안내">📌 보드별 하드웨어 SPI 전용 핀 안내</h3>
+
+<p>아두이노의 하드웨어 SPI 레지스터는 특정 디지털 핀에 물리적으로 하드와이어링(Hard-wired)되어 있습니다.</p>
+
+<pre><code class="language-mermaid">graph LR
+    subgraph Arduino UNO
+        U_SS["D10 (SS)"]
+        U_MOSI["D11 (MOSI)"]
+        U_MISO["D12 (MISO)"]
+        U_SCK["D13 (SCK)"]
+    end
+    subgraph Arduino Mega 2560
+        M_SS["D53 (SS)"]
+        M_MOSI["D51 (MOSI)"]
+        M_MISO["D50 (MISO)"]
+        M_SCK["D52 (SCK)"]
+    end
+</code></pre>
+
+<blockquote>
+  <p>[!IMPORTANT]
+우노와 메가를 SPI로 연결할 때는 핀 번호(11, 12, 13)가 아니라 신호 이름(<strong>MOSI-MOSI, MISO-MISO, SCK-SCK</strong>)을 기준으로 교차 없이 1:1 직결해야 합니다!</p>
+</blockquote>
+
+<hr />
+
+<h2 id="4-슬레이브-선택ss의-비밀-active-low">4. 슬레이브 선택(SS)의 비밀: Active LOW</h2>
+
+<p><img src="./img/image_5_4.png" alt="Slave Select 원리" /></p>
+
+<h3 id="-평소엔-조용히high-대화할-땐-깨우기low">🤫 평소엔 조용히(HIGH), 대화할 땐 깨우기(LOW)!</h3>
+
+<p>SPI 버스에 연결된 모든 슬레이브 장치는 <strong>Active LOW</strong> 방식으로 동작합니다.</p>
+
+<pre><code class="language-mermaid">sequenceDiagram
+    autonumber
+    participant M as Master Arduino
+    participant SS as SS Line (Pin 10)
+    participant SCK as SCK Clock (Pin 13)
+    participant MOSI as MOSI Line (Pin 11)
+    participant S as Target Slave
+
+    Note over SS: 평상시 HIGH (5V, 대기 상태)
+    M-&gt;&gt;SS: digitalWrite(SS, LOW) (0V 활성화!)
+    Note over S: 슬레이브 수신 준비 완료
+    M-&gt;&gt;SCK: 8개의 클록 펄스 생성
+    M-&gt;&gt;MOSI: 1바이트 데이터 직렬 전송 (동시 MISO 수신)
+    M-&gt;&gt;SS: digitalWrite(SS, HIGH) (통신 종료)
+    Note over S: 슬레이브 다시 대기(Hi-Z) 모드로 전환
+</code></pre>
+
+<ul>
+  <li>슬레이브들은 평소에 <strong>SS = HIGH (5V)</strong> 상태로 출력 핀(MISO)을 고임피던스(Hi-Z) 상태로 격리해 둡니다.</li>
+  <li>마스터가 특정 슬레이브와 대화할 때만 해당 슬레이브의 <strong>SS 핀을 LOW(0V)</strong> 로 떨어뜨려 깨웁니다.</li>
+  <li>데이터 교환이 끝나면 다시 <strong>SS = HIGH</strong> 로 올려 버스를 다른 장치에 양보합니다.</li>
+</ul>
+
+<hr />
+
+<h2 id="5-통신-방식-3총사-완전-비교-uart-vs-i2c-vs-spi">5. 통신 방식 3총사 완전 비교: UART vs I2C vs SPI</h2>
+
+<p><img src="./img/image_5_5.png" alt="통신 3총사 비교" /></p>
+
+<h3 id="-아두이노-3대-시리얼-통신-종합-분석">🏆 아두이노 3대 시리얼 통신 종합 분석</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">비교 항목</th>
+      <th style="text-align: left">UART 시리얼 (Serial)</th>
+      <th style="text-align: left">I2C (Wire)</th>
+      <th style="text-align: left">SPI (SPI.h)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>필요 신호선 수</strong></td>
+      <td style="text-align: left">2가닥 (TX, RX)</td>
+      <td style="text-align: left">2가닥 (SDA, SCL)</td>
+      <td style="text-align: left"><strong>4가닥 (MOSI, MISO, SCK, SS)</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>통신 속도</strong></td>
+      <td style="text-align: left">보통 (~115.2 kbps)</td>
+      <td style="text-align: left">보통/빠름 (100k~400 kbps)</td>
+      <td style="text-align: left"><strong>초고속 (수 MHz ~ 20 MHz 이상)</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>전송 방식</strong></td>
+      <td style="text-align: left">비동기 (스타트/스톱 비트 필요)</td>
+      <td style="text-align: left">동기식 반이중 (Half Duplex)</td>
+      <td style="text-align: left"><strong>동기식 전이중 (Full Duplex)</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>디바이스 식별</strong></td>
+      <td style="text-align: left">1:1 직결 전용</td>
+      <td style="text-align: left">7비트 고유 주소 소프트웨어 지정</td>
+      <td style="text-align: left"><strong>독립된 SS 하드웨어 핀 제어</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>데이터 오버헤드</strong></td>
+      <td style="text-align: left">중간 (패킷 프레이밍)</td>
+      <td style="text-align: left">큼 (주소, ACK/NACK 비트)</td>
+      <td style="text-align: left"><strong>없음 (순수 데이터 바이트 전송)</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>주요 활용 분야</strong></td>
+      <td style="text-align: left">시리얼 모니터, GPS, 블루투스</td>
+      <td style="text-align: left">온습도 센서, RTC, I2C LCD</td>
+      <td style="text-align: left"><strong>SD 카드, 컬러 TFT LCD, 무선 NRF</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="6-아두이노-spi-표준-라이브러리-spih-기본-사용법">6. 아두이노 SPI 표준 라이브러리 (SPI.h) 기본 사용법</h2>
+
+<p><img src="./img/image_7_7.png" alt="SPI 라이브러리 사용 구조" /></p>
+
+<h3 id="-마스터-측의-표준-송수신-코드-템플릿">📚 마스터 측의 표준 송수신 코드 템플릿</h3>
+
+<p>아두이노 코어에 내장된 <code class="language-plaintext highlighter-rouge">&lt;SPI.h&gt;</code> 라이브러리를 사용하면 하드웨어 레지스터를 직접 건드리지 않고도 안전하게 SPI 통신을 수행할 수 있습니다.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;SPI.h&gt;</span><span class="c1"> // 표준 SPI 라이브러리 포함</span><span class="cp">
+</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">pinSS</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// 슬레이브 선택 핀 지정</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">pinMode</span><span class="p">(</span><span class="n">pinSS</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>      <span class="c1">// SS 핀을 마스터 출력 모드로 설정</span>
+  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">pinSS</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>   <span class="c1">// 초기 상태는 HIGH (비활성화 상태)로 유지</span>
+  
+  <span class="n">SPI</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>                 <span class="c1">// 하드웨어 SPI 모듈 가동 (SCK=13, MOSI=11, MISO=12 자동 설정)</span>
+  <span class="n">SPI</span><span class="p">.</span><span class="n">setClockDivider</span><span class="p">(</span><span class="n">SPI_CLOCK_DIV4</span><span class="p">);</span> <span class="c1">// 16MHz 클록을 4분주 (4MHz 통신 속도 설정)</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">pinSS</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>    <span class="c1">// 1. 슬레이브 선택 (통신 시작!)</span>
+  
+  <span class="c1">// 2. 1바이트(0x42)를 슬레이브로 쏘는 동시에 슬레이브가 밀어낸 1바이트를 수신받아 변수에 저장</span>
+  <span class="n">byte</span> <span class="n">response</span> <span class="o">=</span> <span class="n">SPI</span><span class="p">.</span><span class="n">transfer</span><span class="p">(</span><span class="mh">0x42</span><span class="p">);</span> 
+  
+  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">pinSS</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>   <span class="c1">// 3. 슬레이브 선택 해제 (통신 완료!)</span>
+  
+  <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>                 <span class="c1">// 1초 간격 반복</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-도로시와-지니의-핵심-요약-노트">🌟 도로시와 지니의 핵심 요약 노트!</h2>
+
+<p><img src="./img/image_6_6.png" alt="SPI 핵심 정리" /></p>
+
+<ul>
+  <li>👧 <strong>도로시</strong>: “SPI는 주소 없이 물리적인 SS 핀을 LOW로 끄집어내어 1:1로 초고속 데이터를 전이중으로 교환하는 통신이구나!”</li>
+  <li>🐱 <strong>지니</strong>: “맞아! I2C보다 선이 조금 더 필요하지만, 오버헤드가 전혀 없어서 SD 카드나 그래픽 LCD처럼 대용량 데이터를 다룰 때 필수적이란다.”</li>
+  <li>🐶 <strong>토토</strong>: “바우! 다음 장에서는 마스터 아두이노와 슬레이브 아두이노를 실제로 SPI로 연결해서 데이터를 주고받아 보자 멍!”</li>
+</ul>
+
+
+            <!-- 구글 애드센스 출력 -->
+            <div class="mt-5">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+    crossorigin="anonymous"></script>
+<!-- jinydev-java -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475" data-ad-slot="9323221865"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+            </div>
+        </div>
+
+        <div class="bd-toc mt-3 mb-5 my-lg-0 ps-xl-3 mb-lg-5 text-body-secondary">
+
+  <button class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none" type="button"
+    data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
+    서브목차
+    <svg class="bi d-md-none ms-2" aria-hidden="true">
+      <use xlink:href="#chevron-expand"></use>
+    </svg>
+  </button>
+
+  <strong class="d-none d-md-block h6 my-2">서브목차</strong>
+
+  <div class="collapse bd-toc-collapse" id="tocContents">
+    <nav id="TableOfContents">
+      <!--
+      <ul>
+        <li><a href="#quick-start">Quick start</a></li>
+        <li><a href="#cdn-links">CDN links</a></li>
+        <li><a href="#next-steps">Next steps</a></li>
+        <li><a href="#js-components">JS components</a></li>
+        <li><a href="#important-globals">Important globals</a>
+          <ul>
+            <li><a href="#html5-doctype">HTML5 doctype</a></li>
+            <li><a href="#responsive-meta-tag">Responsive meta tag</a></li>
+            <li><a href="#box-sizing">Box-sizing</a></li>
+            <li><a href="#reboot">Reboot</a></li>
+          </ul>
+        </li>
+        <li><a href="#community">Community</a></li>
+      </ul>
+      -->
+    </nav>
+  </div>
+</div>
+    </main>
+</div>
+
+<!-- 공용 대화 오디오 플레이어 컨트롤러 스크립트 -->
+<script src="/assets/js/audio.js" defer></script>
+
+  <footer class="bd-footer py-4 py-md-5 mt-5 bg-light border-top">
+  <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+    <div class="row">
+      <div class="col-lg-4 mb-3">
+        <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="/" aria-label="Arduino Master">
+          <span class="fs-4 me-2">⚡</span>
+          <span class="fs-5 fw-bold">아두이노 임베디드 & IoT 마스터 클래스</span>
+        </a>
+        <ul class="list-unstyled small">
+          <li class="mb-2">이호진 교수님, 도로시, 조교 지니, 토토와 함께 떠나는 아두이노 & 피지컬 컴퓨팅 완전 정복 대장정!</li>
+          <li class="mb-2">기초 하드웨어 제어부터 고급 센서, 모터, 통신, 메가 프로젝트, 라즈베리파이까지 193강 풀코스.</li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3 offset-lg-1 mb-3">
+        <h5>학습 바로가기</h5>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="/Part01_아두이노_우노와_기초/000_강의소개_아두이노모험의시작/" class="text-decoration-none">000강 강의 소개 및 오리엔테이션</a></li>
+          <li class="mb-2"><a href="/Part02_아날로그_출력과_기초_센서/032_PWM원리_눈속임깜빡임마법/" class="text-decoration-none">PWM & 아날로그 제어</a></li>
+          <li class="mb-2"><a href="/Part04_그래픽_디스플레이와_모터_구동/074_C언어배열_데이터줄줄이기차/" class="text-decoration-none">모터 제어 & 그래픽 디스플레이</a></li>
+          <li class="mb-2"><a href="/Part06_유무선_통신과_앱_인벤터_IoT/123_다중아두이노_네트워크개요/" class="text-decoration-none">유무선 통신 & IoT</a></li>
+          <li class="mb-2"><a href="/curriculum/" class="text-decoration-none">14주차 전체 커리큘럼</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3 mb-3">
+        <h5>관련 링크</h5>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="https://www.arduino.cc/" target="_blank" rel="noopener" class="text-decoration-none">Arduino 공식 웹사이트</a></li>
+          <li class="mb-2"><a href="https://docs.arduino.cc/" target="_blank" rel="noopener" class="text-decoration-none">Arduino 공식 문서 및 레퍼런스</a></li>
+          <li class="mb-2"><a href="https://www.raspberrypi.com/" target="_blank" rel="noopener" class="text-decoration-none">Raspberry Pi 공식 웹사이트</a></li>
+          <li class="mb-2"><a href="https://github.com" target="_blank" rel="noopener" class="text-decoration-none">GitHub 저장소</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    window.addEventListener('load', async function () {
+      mermaid.initialize({ startOnLoad: false });
+
+      const mermaidCodes = document.querySelectorAll('pre code.language-mermaid');
+      const mermaidDivs = [];
+
+      mermaidCodes.forEach(codeBlock => {
+        const mermaidDefinition = codeBlock.textContent.trim();
+        const container = codeBlock.closest('div.highlighter-rouge');
+
+        const mermaidDiv = document.createElement('div');
+        mermaidDiv.className = 'mermaid';
+        mermaidDiv.textContent = mermaidDefinition;
+
+        if (container) {
+          container.replaceWith(mermaidDiv);
+        } else {
+          const pre = codeBlock.parentElement;
+          if (pre) pre.replaceWith(mermaidDiv);
+        }
+        mermaidDivs.push(mermaidDiv);
+      });
+
+      if (mermaidDivs.length > 0) {
+        await mermaid.run({ nodes: mermaidDivs });
+      }
+    });
+  </script>
+  <script src="/assets/js/toc.js"></script>
+
+</body>
+
+</html>

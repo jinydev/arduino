@@ -1,0 +1,7 @@
+title: "소개하기"
+url: "/character/"
+main:
+  - title: "등장인물 소개"
+    url: "/character/"
+  - title: "커리큘럼 소개"
+    url: "/curriculum/"

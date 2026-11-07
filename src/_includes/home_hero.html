@@ -1,0 +1,127 @@
+<style>
+    .hero-section {
+        background: linear-gradient(180deg, #f8faff 0%, #edf3fb 100%);
+        padding: 4.5rem 1.5rem;
+        /*border-radius: 0 0 2.5rem 2.5rem;*/
+        margin-bottom: 3.5rem;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .hero-title {
+        font-size: 2.85rem;
+        font-weight: 800;
+        color: #1e293b;
+        line-height: 1.25;
+        letter-spacing: -0.03em;
+    }
+
+    .hero-subtitle {
+        font-size: 1.15rem;
+        color: #64748b;
+        margin-top: 1.25rem;
+        margin-bottom: 2.25rem;
+        line-height: 1.65;
+    }
+
+    .hero-image-card {
+        background: #ffffff;
+        padding: 0.6rem;
+        border-radius: 1.75rem;
+        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08), 0 0 1px 1px rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(226, 232, 240, 0.8);
+        display: inline-block;
+        max-width: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-image-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-image {
+        width: 100%;
+        height: auto;
+        border-radius: 1.35rem;
+        display: block;
+        object-fit: cover;
+    }
+
+    .btn-hero-primary {
+        background-color: #273849;
+        color: #ffffff !important;
+        border: none;
+        border-radius: 9999px;
+        padding: 0.85rem 2rem;
+        font-weight: 600;
+        font-size: 1.05rem;
+        box-shadow: 0 4px 12px rgba(39, 56, 73, 0.18);
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        text-decoration: none;
+    }
+
+    .btn-hero-primary:hover {
+        background-color: #1a2634;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(39, 56, 73, 0.28);
+        color: #ffffff !important;
+    }
+
+    .btn-hero-outline {
+        background-color: #ffffff;
+        border: 1.5px solid #273849;
+        color: #273849 !important;
+        border-radius: 9999px;
+        padding: 0.85rem 2rem;
+        font-weight: 600;
+        font-size: 1.05rem;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        text-decoration: none;
+    }
+
+    .btn-hero-outline:hover {
+        background-color: #f1f5f9;
+        border-color: #1a2634;
+        color: #1a2634 !important;
+        transform: translateY(-2px);
+    }
+</style>
+
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0 pe-lg-4">
+                <h1 class="hero-title">
+                    지니와 도로시가 함께<br>
+                    학습하는 아두이노
+                </h1>
+                <p class="hero-subtitle">
+                    이호진 교수님이 가르쳐주는 친절한 원리와 실습 코드로<br>
+                    기초 전자회로부터 스마트 IoT, 로보틱스까지 완벽히 정복합니다!
+                </p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                    <a href="{{ '/Part01_아두이노_우노와_기초/000_강의소개_아두이노모험의시작/' | relative_url }}" class="btn-hero-primary">
+                        소개하기부터 시작 ➔
+                    </a>
+                    <a href="{{ '/curriculum/' | relative_url }}" class="btn-hero-outline">
+                        커리큘럼 살펴보기
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="hero-image-card">
+                    <img src="{{ '/img/arduino_hero_banner.jpg' | relative_url }}" alt="지니와 도로시의 아두이노 전자 모험"
+                        class="hero-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

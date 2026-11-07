@@ -1,0 +1,8 @@
+Studio Ghibli 2D hand-drawn animation style, cel shaded, clear clean lineart, pure solid clean white background, soft floor shadow, no cluttered walls, crisp focus.
+
+Educational scene explaining AC to DC power rectification for Arduino.
+On a clean laboratory desk, a warm Korean male professor (Prof. Hojin, reference 1) with black styled hair, glasses, navy jacket, demonstrates how a safe 5V power adapter transforms wavy AC electricity into smooth DC electricity to safely power a blue Arduino Uno board.
+Beside him, an attentive 9-year-old girl (Dorothy, reference 2) with brown braided pigtails in denim overalls observes with curiosity.
+On the desk, a smart tuxedo bicolour cat with glasses and bell collar (Jiny the lab assistant cat, reference 3) gestures toward a compact oscilloscope screen displaying wavy AC sine wave changing into a steady flat 5V DC line.
+Sitting cheerfully by the table, a fluffy white bichon dog with a sky blue bandana (Toto) wags its tail.
+Masterpiece, clear conceptual visual, warm and charming educational tone.

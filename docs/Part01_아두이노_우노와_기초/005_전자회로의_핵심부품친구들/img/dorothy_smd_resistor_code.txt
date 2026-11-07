@@ -1,0 +1,8 @@
+Studio Ghibli 2D hand-drawn animation style, cel shaded, clear clean lineart, pure solid clean white background, soft floor shadow, no cluttered walls, no speech bubble, crisp focus.
+
+Educational scene teaching how to read SMD surface-mount resistor 3-digit codes.
+A kind Korean male professor (Prof. Hojin, reference 1) with black styled hair, glasses, navy jacket, holds a clear enlarged teaching model of an SMD chip resistor labeled '103', explaining that 10 with 3 zeros equals 10,000Ω (10kΩ).
+An attentive 9-year-old girl (Dorothy, reference 2) in denim overalls looks through a jewelers loupe at an Arduino circuit board finding the tiny 103 chip.
+A smart tuxedo bicolour cat with glasses and bell collar (Jiny the lab assistant cat, reference 3) points its paw at a small whiteboard showing '103 = 10kΩ'.
+A cute fluffy white bichon dog with a sky blue bandana (Toto) sits happily nearby.
+Masterpiece, clear technical explanation, warm Studio Ghibli anime style.

@@ -1,0 +1,9 @@
+Studio Ghibli 2D hand-drawn animation style, cel shaded, clear clean lineart, pure solid clean white background, soft floor shadow, no cluttered walls, crisp focus.
+
+Educational demonstration of measuring DC voltage on an Arduino Uno board.
+On a clean maker workbench, a 9-year-old girl (Dorothy, reference 2) in denim overalls carefully touches the red probe to the Arduino 5V pin and black probe to the GND pin in parallel.
+The digital multimeter display clearly shows a bright digital readout of '5.00 V'.
+A kind Korean male professor (Prof. Hojin, reference 1) with black styled hair, glasses, navy jacket, gives an approving thumbs-up.
+A smart tuxedo bicolour cat with glasses and bell collar (Jiny the lab assistant cat, reference 3) sits beside the Arduino verifying the pin alignment.
+A cute fluffy white bichon dog with a sky blue bandana (Toto) wags its tail cheerfully.
+Masterpiece, accurate electronics practice, warm charming anime style.
