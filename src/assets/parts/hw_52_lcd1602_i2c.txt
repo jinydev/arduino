@@ -1,0 +1,1 @@
+i2c 1602 character lcd display module, royal blue backlit liquid crystal screen, 5x8 dot matrix pixel characters reading hello jiny and dorothy, green pcb board, attached black i2c backpack module with 4 header pins, clean dark espresso line art, soft warm 2d cel shading, studio ghibli anime aesthetic, pure solid white background.
